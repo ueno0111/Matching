@@ -1,0 +1,1684 @@
+@media (max-width: 1399px)/*max-widthが最大幅、min-widthは最小幅*/
+{
+
+html{
+  height:100%;
+  width:100%;
+}
+
+body{
+  font-family: 'Bangers', cursive;
+  font-family: "メイリオ,meiryo";
+  width:100%;
+}
+
+
+li{ 
+  list-style: none;
+}
+
+ul{
+  padding-top: 70px;
+}
+
+
+/*一番上のヘッダー部分*/
+.gl-Header{
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffe0ef;
+  height: 125px;
+  width: 100%;
+  margin-left: -7px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+
+/*ヘッダーロゴ*/
+.ul.gl-header-container{
+  position: relative;
+}
+
+.Header-Logo{
+  margin-left: 75px;
+  width: 32rem;
+  margin-top: -223px;
+}
+
+
+/*ヘッダー画像の装飾*/
+.title-text{
+  color: #fff;
+  font-size: 3rem;
+  font-family: unset;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -11rem;
+  margin-left: -20rem;
+  text-shadow:5px 0 5px black;
+}
+.title-text1{
+  color:#fff;
+  font-size: 3rem;
+  font-family: unset;
+  font-weight: bold;
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: -76px;
+}
+.title-text2{
+  color:#fff;
+  font-family: unset;
+  text-align: center;
+  font-size: 14rem;
+  font-weight: bolder;
+  margin-top: -6rem;
+}
+.title-text3{
+  color: #fff;
+  font-size: 37px;
+  font-family: unset;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -10rem;
+}
+.title-text4{
+  background-color: turquoise;
+  border-radius: 50%;
+  width: 18rem;
+  height: 17rem;
+  font-size: 2rem;
+  margin-left: 61rem;
+  margin-top: -23rem;
+  padding-top: 46px;
+}
+
+.title-text4 p{
+  color: #fff;
+  margin-top: -8px;
+  margin-left: -15px;
+  font-size: 39px;
+}
+
+
+figure {
+  width: 100%;
+  position: relative;
+  margin-left: -5px;
+  margin-bottom: 30px;
+  background-color: #111;
+  opacity: 0.7;
+}
+/*
+img.no1-image{
+  margin-top: 28rem;
+  width: 25rem;
+  margin-left: -5rem;
+}
+*/
+figure img {
+  width: 100%;
+  vertical-align: top;
+  margin-top: 80px;
+  opacity: 0.85;
+  position: relative;
+  margin-top: 109px;
+}
+
+
+figure figcaption {
+  font-size: 80px;
+  color: black;
+  position: absolute;
+  top: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-style: italic;
+  margin-left: -7px;
+}
+/*
+.header-image-title{
+  position: absolute;
+  background-color: steelblue;
+  height: 20%;
+  width: 100%;
+  opacity: 0.7;
+  margin-top: -377px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-left: 2px;
+}*/
+
+/*ピンクストライプの８タイトル*/
+.main-visual1-left__register-prompt{
+  background-image: repeating-linear-gradient(150deg, #ffe0ef 0 6%, transparent 4.8% 7.6%);
+  color:darkslategray;;
+  height:140px;
+  font-size: 45px;
+  margin-top: 70px;
+  text-align: center;
+  font-style: italic;
+  margin-top: 170px;
+}
+
+.main-visual2-left__register-prompt{
+  background-image: repeating-linear-gradient(150deg, #ffe0ef 0 6%, transparent 4.8% 7.6%);
+  color:darkslategray;;
+  height:140px;
+  font-size: 45px;
+  margin-top: 70px;
+  text-align: center;
+  font-style: italic;
+  margin-top: 170px;
+  margin-bottom: 38px;
+}
+
+
+.main-visual3-left__register-prompt{
+  background-image: repeating-linear-gradient(150deg, #ffe0ef 0 6%, transparent 4.8% 7.6%);
+  color:darkslategray;
+  height:140px;
+  font-size: 45px;
+  margin-top: 70px;
+  text-align: center;
+  font-style: italic;
+  margin-top: 170px;
+
+}
+
+
+.main-visual4-left__register-prompt{
+  background-image: repeating-linear-gradient(150deg, #ffe0ef 0 6%, transparent 4.8% 7.6%);
+  color:darkslategray;;
+  height:140px;
+  font-size: 45px;
+  margin-top: 70px;
+  text-align: center;
+  font-style: italic;
+  margin-top: 170px;
+  margin-bottom: 40px;
+}
+
+
+
+.main-visual6-left__register-prompt{
+  background-image: repeating-linear-gradient(150deg, #ffe0ef 0 6%, transparent 4.8% 7.6%);
+  color:darkslategray;;
+  height:140px;
+  font-size: 45px;
+  margin-top: 70px;
+  text-align: center;
+  font-style: italic;
+  margin-top: 70px;
+  margin-bottom: -55px;
+}
+
+.main-visual7-left__register-prompt{
+  background-image: repeating-linear-gradient(150deg, #ffe0ef 0 6%, transparent 4.8% 7.6%);
+  color:darkslategray;;
+  height:140px;
+  font-size: 45px;
+  margin-top: 70px;
+  text-align: center;
+  font-style: italic;
+  margin-top: 420px;
+  margin-bottom: 100px;
+
+}
+
+.main-visual8-left__register-prompt{
+  background-image: repeating-linear-gradient(150deg, #ffe0ef 0 6%, transparent 4.8% 7.6%);
+  color:darkslategray;;
+  height:140px;
+  font-size: 45px;
+  margin-top: 70px;
+  text-align: center;
+  font-style: italic;
+  margin-top: 220px;
+  margin-bottom: 80px;
+}
+
+
+/*アプリの長所４項目*/
+.main-visual-step1{
+  background-color: lightpink;
+  margin-top: 160px;
+  color: white;
+  text-align: center;
+  width: 80%;
+  border-radius: 15px;
+  padding: 5px 40px 5px 40px;
+  animation-name: fadeleft;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  margin-left: 115px;
+  font-style: italic;
+  text-shadow: 1px 1px 9px #111;
+  font-weight: bold;
+  font-size: 50px;
+}
+@keyframes fadeleft {
+  from {
+  opacity: 0;
+  transform: translateX(150px);
+  }
+  to {
+  opacity: 1;
+  transform: translateX(0);
+  }
+}
+
+
+
+.main-visual-step2{
+  margin-left: 250px;
+  background-color:lightpink;
+  margin-top: 43px;
+  color: white;
+  text-align: center;
+  width: 80%;
+  border-radius: 15px;
+  padding: 5px 40px 5px 40px;
+  animation-name: fadeleft;
+  animation-duration: 5s;
+  animation-iteration-count: 1;
+  margin-left: 115px;
+  font-style: italic;
+  text-shadow: 1px 1px 9px #111;
+  font-weight: bold;
+  font-size: 50px;
+ 
+}
+
+@keyframes fadeleft {
+from {
+    opacity: 0;
+    transform: translateX(150px);
+}
+to {
+    opacity: 1;
+    transform: translateX(0);
+}
+}
+
+
+.main-visual-step3{
+  background-color:lightpink;
+  margin-top: 47px;
+  color: white;
+  text-align: center;
+  width: 80%;
+  border-radius: 15px;
+  padding: 5px 40px 5px 40px;
+  animation-name: fadeleft;
+  animation-duration: 7s;
+  animation-iteration-count: 1;
+  margin-left: 115px;
+  font-style: italic;
+  text-shadow: 1px 1px 9px #111;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+@keyframes fadeleft {
+from {
+    opacity: 0;
+    transform: translateX(150px);
+}
+to {
+    opacity: 1;
+    transform: translateX(0);
+}
+}
+
+
+.main-visual-step4{
+  margin-left: 250px;
+  background-color: lightpink;
+  margin-top: 50px;
+  color: white;
+  text-align: center;
+  width: 80%;
+  border-radius: 15px;
+  padding: 5px 40px 5px 40px;
+  animation-name: fadeleft;
+  animation-duration: 9s;
+  animation-iteration-count: 1;
+  margin-left: 115px;
+  font-style: italic;
+  text-shadow: 1px 1px 9px #111;
+  margin-bottom: 100px;
+  font-weight: bold;
+  font-size: 50px;
+}
+
+@keyframes fadeleft {
+from {
+    opacity: 0;
+    transform: translateX(150px);
+}
+to {
+    opacity: 1;
+    transform: translateX(0);
+}
+}
+
+
+
+/*新規登録はこちら、モーダルウインドウ*/
+.main-visual-content{
+  background-image: url(cereblate.png);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  padding-bottom: 130px;
+  opacity: 0.8;
+  z-index: 0;
+  margin-top: 110px;
+  height: 920px;
+  margin-top: -29px;
+}
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family:'Avenir','Helvetica, Neue','Helvetica','Arial';
+}
+
+
+/* モーダルCSS */
+/********************************今すぐ会員登録！**********************************/
+.modalArea {
+  display: none;
+  position: fixed;
+  z-index: 10; /*サイトによってここの数値は調整 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modalBg {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30,30,30,0.9);
+}
+
+.modalWrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  width: 70%;
+  max-width: 500px;
+  padding: 10px 30px;
+  background-color: #fff;
+}
+
+.closeModal {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+/* 以下ボタンスタイル */
+button {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #282828;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#openModal{
+  position: absolute;
+  left: 53%;
+  transform: translate(-50%,-50%);
+  height: 160px;
+  width: 500px;
+  font-size: 39px;
+  background-color: grey;
+  color: white;
+  font-weight: bold;
+  margin-top: -14%;
+  border-radius: 5rem;
+}
+
+.modalWrapper {
+  height : 50%;
+  overflow : auto;
+  background-color: aliceblue;
+  text-align: center;
+}
+/*モーダルタイトル*/
+.modal-title{
+  width: 100%;
+  font-size: 35px;
+  font-weight: bold;
+  opacity: 0.8;
+  color:color;
+  border-radius: 30px;
+  margin-left: 7px;
+}
+
+/*モーダルの中の送信ボタン*/
+@import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
+
+.image-file{
+  margin-left: 85px;
+  margin-top: 20px;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+.btn--orange,
+a.btn--orange {
+  color: #fff;
+  background-color: #ffe0ef;
+  margin-top: 40px;
+}
+
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+.fa-position-left {
+  position: absolute;
+  top: calc(50% - 0.5em);
+  left: 1rem;
+}
+
+.prof-image{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.name{
+  margin-top: 70px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align: center;
+  font-weight: bold;
+}
+.kana{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+}
+.gender{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+}
+.age{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+}
+.mail{
+  margin-top: 50px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align: center;
+  font-weight: bold;
+}
+.tel-number{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+}
+.area-modal{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+}
+.job{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+}
+.title-purpose{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+}
+
+
+.checkbox1{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+}
+
+.checkbox2{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+}
+.checkbox3{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+}
+
+.introduction{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+}
+
+
+/* モーダルCSS */
+/******************************************簡単無料登録**********************************/
+.modalArea2 {
+  display: none;
+  position: fixed;
+  z-index: 10; /*サイトによってここの数値は調整 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modalBg2 {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30,30,30,0.9);
+}
+
+.modalWrapper2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  width: 70%;
+  max-width: 500px;
+  padding: 10px 30px;
+  background-color: #fff;
+}
+
+.closeModal2 {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+/* 以下ボタンスタイル */
+button {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #282828;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#openModal2{
+  position: absolute;
+    left: 53%;
+    transform: translate(-50%,-50%);
+    height: 160px;
+    width: 500px;
+    font-size: 39px;
+    background-color: grey;
+    color: white;
+    font-weight: bold;
+    margin-top: 200px;
+    border-radius: 5rem;
+}
+
+.modalWrapper2 {
+  height : 50%;
+  overflow : auto; 
+  height: 50%;
+  overflow: auto;
+  background-color: aliceblue;
+  text-align: center;
+}
+/*モーダルタイトル*/
+.modal-title2{
+  width: 100%;
+  font-size: 35px;
+  font-weight: bold;
+  opacity: 0.8;
+  color:color;
+  border-radius: 30px;
+  margin-left: 7px;
+}
+
+/*モーダルの中の送信ボタン*/
+@import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
+
+.image-file{
+  margin-left: 85px;
+  margin-top: 20px;
+}
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+.btn--orange,
+a.btn--orange {
+  color: #fff;
+  background-color: #ffe0ef;
+  margin-top: 40px;
+}
+
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+.fa-position-left {
+  position: absolute;
+  top: calc(50% - 0.5em);
+  left: 1rem;
+}
+
+.prof-image{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.name{
+  margin-top: 70px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+.kana{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+.gender{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+.age{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+.mail{
+  margin-top: 50px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+.tel-number{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+.area-modal{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+.job{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+.title-purpose{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+
+.checkbox1{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.checkbox2{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+.checkbox3{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.introduction{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: -10px;
+  width: 450px;
+  background-color: #ffe0ef;
+  font-size: 26px;
+  text-align:center;
+  font-weight: bold;
+  border-radius: 15px;
+}
+/*************************************簡単無料登録****************************************/
+
+
+/* モーダルCSS */
+/*************************************ログインする****************************************/
+.modalArea3 {
+  display: none;
+  position: fixed;
+  z-index: 10; /*サイトによってここの数値は調整 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modalBg3 {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30,30,30,0.9);
+}
+
+.modalWrapper3{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  width: 70%;
+  max-width: 500px;
+  padding: 10px 30px;
+  background-color: #fff;
+}
+
+.closeModal3 {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+/* 以下ボタンスタイル */
+button {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #282828;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#openModal3{
+  height: 160px;
+  font-size: 39px;
+  background-color: gray;
+  color: white;
+  font-weight: bold;
+  margin-top: 140px;
+  border-radius: 5rem;
+  width: 500px;
+  margin-left: 3%;
+  margin-bottom: 100px;
+}
+
+}
+
+.login-section{
+  text-align: center;
+}
+
+.modalWrapper3 {
+  overflow : auto; 
+  height: 315px;
+  overflow: auto;
+  background-color: lavender;
+  text-align: center;
+}
+/*モーダルタイトル*/
+.modal-title3{
+  width: 445px;
+  font-size: 35px;
+  background-color: deepskyblue;
+  font-weight: bold;
+  color: white;
+}
+
+/*モーダルの中の送信ボタン*/
+@import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+.btn--orange,
+a.btn--orange {
+  color: #fff;
+  background-color: hotpink;
+  margin-top: 40px;
+}
+
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+.fa-position-left {
+  position: absolute;
+  top: calc(50% - 0.5em);
+  left: 1rem;
+}
+
+.form-control3{
+  width: 370px;
+  height: 36px;
+  font-size: 15px;
+  text-align: center;
+  margin-top: 30px;
+}
+
+input[type="submit"]{
+  margin-top: 30px;
+  width: 100px;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 12px;
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: white;
+  background-color: hotpink;
+}
+
+
+/********************************************ユーザーからの声画像部分***************************************/
+.top-Happy_Reports{
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+.hr-AllReports_Info{
+  background-color: antiquewhite;;
+  width:336px;
+  opacity: 0.8;
+}
+
+.hr-AllReports_Info span{
+    color:black;
+}
+
+.register-button-container{
+    margin-bottom: 150px;
+}
+  
+
+.hr-AllReports_Item{
+  margin-top: 50px;
+  margin-left: 155px;
+  display: inline-block;
+}
+
+.main-visual-wrap1{
+  background-color: lavender;
+  margin-top: -38px;
+  height: 1400px;
+  padding-top: 6rem;
+}
+
+.top-happy-content{
+  background-color: lavender;
+  height: 66rem;
+  padding-top: 96px;
+  margin-top: -100px;
+  margin-left: -6rem;
+}
+
+/******************************************今すぐ登録して始めてみよう！****************************************/
+.step{
+  background-color:#434343;
+  color: white;
+  text-align: center;
+  margin-left: 200px;
+  margin-right: 243px;
+  margin-top: 80px;
+}
+
+.step-name{  
+  font-size: x-small;
+  text-align: center;
+  margin-right: 35px;
+}
+
+
+
+
+/*************************************** STEP123横スクロール画像 ******************************************/
+.step-3content{
+  overflow: auto;
+  scroll-snap-type: x;
+  display: flex;
+  margin-top: -69px;
+}
+.area {
+  scroll-snap-align: start;
+  height: 160vh;
+  width: 100vw;
+  flex: none;
+  text-align: center;
+  margin-top: 40px;
+  background-color: lavender;
+  height:1400px;
+}
+
+.area h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  background-color: #ffe0ef;
+  width: 50%;
+  margin-left: 26%;
+  margin-top: 190px;
+  border-radius: 70px;
+  border: 1px solid lightgrey;
+}
+
+.area h2{
+  margin-top: 20px;
+  margin-top: 50px;
+  font-size: 35px;
+
+}
+.step-3content-img1{
+  margin-top: 40px;
+  height:745px;
+}
+
+.step-3content-img2{
+  height:745px;
+}
+
+.step-3content-img3{
+  margin-top:-125px ;
+  height:900px;
+}
+
+
+/************************************スピードマッチング〜アプリご利用の流れ〜**************************************/
+.main-visual-wrap2{
+  background-color: lavender;
+  margin-top: -38px;
+  padding-top: 6rem;
+  padding-left: 15rem;
+}
+
+.step-3content2{
+  overflow: auto;
+  scroll-snap-type: x;
+  display: flex;
+  margin-top: -80px;
+}
+.area-2 {
+  scroll-snap-align: start;
+  height: 170vh;
+  width: 100vw;
+  flex: none;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.area-2 h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  background-color: #ffe0ef;
+  width: 67%;
+  margin-left: 19%;
+  margin-top: 174px;
+  border-radius: 70px;
+  border: 1px solid lightgrey;
+}
+
+.area-3 h2{
+  margin-top: 20px;
+  margin-top: 74px;
+  margin-bottom: 40px;
+  font-size: 31px;
+
+}
+
+.area-2:nth-child(even) {
+  background-color:lavender;
+  margin-top: 45px;
+  height: 1400px;
+}
+.area-2:nth-child(odd) {
+  background-color: lavender;
+  margin-top: 45px;
+  height:1400px;
+  
+}
+
+
+.step-3content2{
+  overflow: auto;
+  scroll-snap-type: x;
+  display: flex;
+  margin-top: -80px;
+}
+.area-3 {
+  scroll-snap-align: start;
+  height: 170vh;
+  width: 100vw;
+  flex: none;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.area-3 h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  background-color: #ffe0ef;
+  width: 67%;
+  margin-left: 215px;
+  margin-top: 160px;
+  border-radius: 70px;
+  border: 1px solid lightgrey;
+}
+
+.area-3 h2{
+  margin-top: 45px;
+  margin-bottom: 80px;
+  font-size: 24px;
+
+}
+
+.area-3:nth-child(even) {
+  background-color:lavender;
+}
+.area-3:nth-child(odd) {
+  background-color:  lavender;
+  margin-top: 45px;
+  padding-top: 0.2px;
+  height:1400px;
+  
+}
+.gl-header-container{
+
+}
+
+.step-3content2-img1{
+  height: 830px;
+  margin-top: 40px;
+  margin-left: 15px;
+}
+
+.step-3content2-img2{
+  height: 710px;
+  width: 827px;
+  margin-top: 40px;
+  margin-left: 35px;
+}
+.step-3content2-img3{
+  height: 710px;
+  width: 920px;
+  margin-top: -24px;
+}
+.visual-content-fadeup {
+  font-size: 30px;
+  font-weight: bold;
+  animation-name: fadeup;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  display: flex;
+  border-radius: 50px;
+  margin-left: 17px;
+}
+@keyframes fadeup {
+  from {
+  opacity: 0;
+  transform: translateY(20px);
+  }
+  to {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+
+    
+.visual-content-fadeup2{
+  font-size: 30px;
+  font-weight: bold;
+  animation-name: fadeup;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  display: flex;
+  border-radius: 50px;
+  margin-left: 17px;
+  margin-top: 20px;
+  padding-bottom: 40px;
+}
+@keyframes fadeup {
+  from {
+  opacity: 0;
+  transform: translateY(20px);
+  }
+  to {
+  opacity: 1;
+  transform: translateY(0);
+}
+}
+
+.login-mail{
+  margin-top: 61px;
+  margin-left: -10px;
+  width: 450px;
+  font-size: 22px;
+  text-align: center;
+  font-weight: bold;
+  color: darkslategrey;
+  font-size: 20px;
+}
+
+/***************************************個人情報をしっかり守ります********************************************/
+.media-wrapper h4{
+  background-color: #434343;
+  color:white;
+  text-align: center;
+}
+
+
+.section-security span{
+  color: deeppink;
+  font-size: 38px;
+  font-weight: bold
+}
+
+.section-security li{
+  font-size: 35px;
+  margin-top: 10px;
+  margin-top: 45px;
+  background-color: lavender;
+  border-bottom: dotted;
+  margin-left: -210px;
+  text-align: center;
+  padding-left: 150px;
+}
+
+.section-security ul{
+  padding-bottom: 100px;
+    height: 660px;
+}
+
+
+/*******************************************お問い合わせ**************************************************/
+.main2{
+  min-width: 800px;
+
+}
+
+.contact-form{
+  width: 78%;
+  margin:60px auto;
+  padding: 80px;
+  background-color:lavender;
+  color:#333;
+  margin-bottom: 90px;
+
+}
+
+.form-title{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 30px; 
+  font-weight: bold; 
+}
+
+.form-item{
+  padding: 20px 0 10px 0;
+  font-weight: bold;
+}
+
+input[type="text"]{
+  width: 45%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 12px;
+  box-shadow: inset0 1px 1px rgba(0,0,0,.075);
+  transition: border-color ease-in-out.15s,box-shadow ease-in-out.15s;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555;
+  text-align: center;
+}
+
+
+input[type="submit"]{
+  margin-top: 30px;
+  width: 100px;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 12px;
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: white;
+  background-color: grey;
+}
+
+input[type="button"]{
+  height: 160px;
+  width: 500px;
+  font-size: 39px;
+  background-color:navy;
+  color: white;
+  font-weight: bold;
+  margin-left: 250px;
+  margin-top: 70px;
+}
+
+
+textarea{
+  width: 90%;
+  height: 200px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 6px 12px;
+  box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+  transition: border-color ease-in-out.15s, box-shadow ease-in-out.15s;
+  font-size: 14px;
+  line-height: 1.428571429;
+  color: #555;
+
+}
+
+.thanks-message{
+  margin-top: 50px;
+  text-align: center;
+  font-size: 24px;
+
+}
+
+.display-contact{
+  width: 70%;
+  margin: 30px auto;
+  padding: 50px;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+
+
+/************************************************Footer部分*********************************************/
+.FooterSection {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  background: #2f2e2e;
+}
+.Footer-Inner {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1020px;
+  width: 100%;
+}
+.Footer-Inner-Logo {
+  margin-left: auto;
+  margin-right: auto;
+  width: 64px;
+}
+.Footer-Inner-List {
+  margin-top: 20px;
+margin-left: 160px;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 540px) {
+  .Footer-Inner-List {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+.Footer-Inner-List-Item {
+  margin-right: -315px;
+  margin-left: -80px;
+  padding-left: -30px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
+}
+@media screen and (max-width: 540px) {
+  .Footer-Inner-List-Item {
+    margin-right: 0;
+    padding-left: 0;
+    width: 100%;
+  }
+}
+.Footer-Inner-List-Item:not(:first-child) {
+  border-left: 1px solid #fff;
+}
+@media screen and (max-width: 540px) {
+  .Footer-Inner-List-Item:not(:first-child) {
+    border-left: none;
+    margin-top: 20px;
+  }
+}
+.Footer-Inner-CopyRight {
+  margin-top: 20px;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+}
+
+
+/***********************************************ハンバーガーボタン*******************************************/
+.hamburger {
+  display : block;
+  position: fixed;
+  z-index : 3;
+  right : 170px;
+  top   : 51px;
+  width : 100px;
+  height: 42px;
+  cursor: pointer;
+  text-align: center;
+}
+.hamburger span {
+  display: block;
+  position: absolute;
+  width: 37px;
+  height: 3px;
+  left: 6px;
+  background: black;
+  transition: 0.3s ease-in-out;
+  margin-top: 32p;
+}
+
+.hamburger span:nth-child(1) {
+  top: 10px;
+}
+.hamburger span:nth-child(2) {
+  top: 20px;
+}
+.hamburger span:nth-child(3) {
+  top: 30px;
+}
+
+/***********************************************ナビ開いてる時のボタン***************************************/
+.hamburger.active span:nth-child(1) {
+  top : 16px;
+  left: 6px;
+  -webkit-transform: rotate(-45deg);
+  -moz-transform   : rotate(-45deg);
+  transform        : rotate(-45deg);
+}
+
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+  top: 16px;
+  -webkit-transform: rotate(45deg);
+  -moz-transform   : rotate(45deg);
+  transform        : rotate(45deg);
+}
+
+nav.globalMenuSp {
+  position: fixed;
+  z-index : 2;
+  top  : 0;
+  left : 0;
+  color: #000;
+  background: #fff;
+  text-align: center;
+  transform: translateY(-100%);
+  transition: all 0.6s;
+  width: 100%;
+}
+
+nav.globalMenuSp ul {
+  
+  background: white;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
+
+nav.globalMenuSp ul li {
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+nav.globalMenuSp ul li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+nav.globalMenuSp ul li:hover{
+  background :#ddd;
+}
+
+nav.globalMenuSp ul li a {
+  display: block;
+  color:black;
+  padding: 1em 0;
+  text-decoration :none;
+  background-color: aliceblue;
+}
+
+/* このクラスを、jQueryで付与・削除する */
+nav.globalMenuSp.active {
+  transform: translateY(0%);
+}
+}

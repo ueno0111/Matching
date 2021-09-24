@@ -1,0 +1,841 @@
+@media (max-width: 1399px)/*max-widthが最大幅、min-widthは最小幅*/
+{
+
+html{
+  height:100%;
+  width:100%;
+  background-color: lavender;
+}
+
+body{
+  font-family: 'Bangers', cursive;
+  font-family: "メイリオ,meiryo";
+  width:100%;
+}
+
+
+li{
+list-style: none;
+}
+
+
+/*一番上のヘッダー部分*/
+.gl-Header{
+  justify-content: space-between;
+  align-items: center;
+  background-color:#ffe0ef;
+  height: 125px;
+  width: 100%;
+  margin-left: -7px;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+
+/*ヘッダーロゴ*/
+.Header-Logo{
+  margin-top: -183px;
+  margin-left: 75px;
+  width: 27rem;
+  z-index: -11;
+}
+
+.header-title h3{
+  height: 75px;
+  font-size: 55px;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -160px;
+  margin-left: 340px;
+  margin-bottom: 65px;
+}
+
+/*ヘッダー画像の装飾*/
+.header-subtitle{
+  background-color: snow;
+  font-size: 36px;
+  color: darkslategrey;
+  font-weight: bold;
+  text-align: center;
+  margin-top: -290px;
+  width: 100%;
+
+}
+
+.edit{
+  float: right;
+  margin-top: 60px;
+  padding-right: 18px;
+}
+
+.img1{
+  border-radius: 50%;
+  height: 34rem;
+  margin-top: 288px;
+  margin-left: 13rem;
+  width: 570px;
+  margin-bottom: 45px;
+}
+
+
+.item{
+font-size: 45px;
+text-align: center;
+}
+
+.good{
+    width: 340px;
+    margin-top: -40px;
+    margin-left: 263px;
+}
+
+.good-point{
+  float: right;
+    font-size: 45px;
+    font-weight: bold;
+    margin-top: 85px;
+    margin-right: 265px;
+}
+
+.btn1{
+  margin-left: 72px;
+  background-color: lavenderblush;
+  width: 150px;
+  height: 45px;
+  font-size: 20px;
+  border: 1px #111 solid;
+}
+
+.btn2{
+
+  margin-left: 72px;
+  background-color: lavenderblush;
+  width: 220px;
+  height: 54px;
+  font-size: 20px;
+  border: 1px #111 solid;
+  color: darkslategrey;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.btn3{
+  background-color: lavenderblush;
+  width: 25rem;
+  height: 7rem;
+  font-size: 3rem;
+  font-weight: bold;
+  border: 1px #111 solid;
+  margin-left: 0rem;
+  margin-bottom: 13rem;
+}
+
+/*お相手検索*/
+.modalArea4 {
+  display: none;
+  position: fixed;
+  z-index: 10; /*サイトによってここの数値は調整 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modalBg4 {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30,30,30,0.9);
+}
+
+.modalWrapper4 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  width: 70%;
+  max-width: 500px;
+  padding: 10px 30px;
+  background-color: #fff;
+}
+
+.closeModal4 {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+
+/* 以下ボタンスタイル */
+button {
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #282828;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+#openModal4{
+  margin-left: 40px;
+  background-color: lavenderblush;
+  width: 206px;
+  height: 54px;
+  font-size: 20px;
+  color: darkslategrey;
+}
+
+.modalWrapper4 {
+  height : 50%;
+  overflow : auto; 
+  height: 50%;
+  overflow: auto;
+  text-align: center;
+}
+.modal-title4{
+  width: 100%;
+  font-size: 35px;
+  font-weight: bold;
+  opacity: 0.8;
+  color: darkslategray;
+  border-radius: 30px
+}
+
+/*モーダルの中の送信ボタン*/
+@import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+.btn--orange,
+a.btn--orange {
+  color: #fff;
+  background-color: hotpink;
+  margin-top: 40px;
+}
+
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+.fa-position-left {
+  position: absolute;
+  top: calc(50% - 0.5em);
+  left: 1rem;
+}
+
+/*お相手検索*/
+.gender{
+  margin-top: 80px;
+  margin-bottom: 30px;
+  width: 470px;
+  background-color: snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 16px;
+  border-radius: 10px;
+}
+
+.gender-type{
+font-size:30px;
+}
+
+.age{
+  margin-top: 80px;
+  margin-bottom: 30px;
+  width: 470px;
+  background-color: snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 16px;
+  border-radius: 10px;
+}
+.mail{
+  margin-top: 80px;
+  margin-bottom: 30px;
+  width: 470px;
+  background-color:  snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 16px;
+  border-radius: 10px;
+}
+
+.tel{
+  margin-top: 80px;
+  margin-bottom: 30px;
+  width: 470px;
+  background-color:  snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 16px;
+  border-radius: 10px;
+}
+
+
+
+.area{
+  margin-top: 80px;
+  margin-bottom: 30px;
+  width: 470px;
+  background-color: snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 16px;
+  border-radius: 10px;
+}
+
+.job{
+  margin-top: 80px;
+  margin-bottom: 30px;
+  width: 470px;
+  background-color:  snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 16px;
+  border-radius: 10px;
+}
+.title-purpose{
+  margin-top: 80px;
+  margin-bottom: 30px;
+  width: 470px;
+  background-color:  snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 16px;
+  border-radius: 10px;
+}
+
+.your-personality{
+  font-size:30px;
+}
+
+.your-like{
+  font-size:30px;
+}
+
+.your-hobby{
+  font-size:30px;
+}
+.checkbox1{
+  margin-top: 80px;
+  margin-bottom: 30px;
+  width: 470px;
+  background-color:  snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 16px;
+  border-radius: 10px;
+}
+
+.checkbox2{
+  margin-top: 80px;
+  margin-bottom: 30px;
+  width: 470px;
+  background-color:  snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 16px;
+  border-radius: 10px;
+}
+.checkbox3{
+  margin-top: 80px;
+  margin-bottom: 30px;
+  width: 470px;
+  background-color: snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 16px;
+  border-radius: 10px;
+}
+.intro{
+  margin-top: 80px;
+  margin-bottom: 30px;
+  margin-left: 350px;
+  width: 600px;
+  background-color:  snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.form-control{
+  height: 40px;
+  width: 300px;
+  margin-top: 15px;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  margin-left: 20px;
+  text-align: center;
+}
+
+select{
+  font-size: 30px;
+  margin-left: 600px;
+}
+
+textarea{
+  height: 300px;
+  width: 500px;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  margin-left: 320px;
+}
+/*お相手検索終了*/
+
+
+
+
+
+/*編集するモーダル*/
+.modalArea2 {
+  display: none;
+  position: fixed;
+  z-index: 10; /*サイトによってここの数値は調整 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.modalBg2 {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(30,30,30,0.9);
+}
+
+.modalWrapper2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-50%,-50%);
+  width: 70%;
+  max-width: 500px;
+  padding: 10px 30px;
+  background-color: #fff;
+}
+
+.closeModal2 {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  cursor: pointer;
+}
+
+button {
+  cursor: pointer;
+  background-color: lavenderblush;
+  width: 35%;
+  height: 100px;
+  font-size: 29px;
+  border: 1px #111 solid;
+  color: darkslategrey;
+  font-weight: bold;
+  border-radius: 10px;
+  font-family: monospace;
+  margin-left: 2rem;
+}
+
+#openModal2{
+  position: absolute;
+  left: 640px;
+  transform: translate(-50%,-50%);
+  height: 100px;
+  width: 300px;
+  font-size: 39px;
+  background-color: lavenderblush;
+  color: #111;
+  margin-top: 70px;
+}
+
+.modalWrapper2 {
+  height : 50%;
+  overflow : auto; 
+  height: 50%;
+  overflow: auto;
+  background-color: azure;
+  text-align: center;
+}
+/*モーダルタイトル*/
+.modal-title2{
+  width: 100%;
+  font-size: 35px;
+  background-color: hotpink;
+  font-weight: bold;
+  opacity: 0.8;
+  color:white;
+  border-radius: 30px
+}
+
+/*モーダルの中の送信ボタン*/
+@import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
+
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  color: #212529;
+  border-radius: 0.5rem;
+}
+
+.btn--orange,
+a.btn--orange {
+  color: #fff;
+  background-color: grey;
+  margin-top: 40px;
+}
+
+.btn--orange:hover,
+a.btn--orange:hover {
+  color: #fff;
+  background: #f56500;
+}
+
+.fa-position-left {
+  position: absolute;
+  top: calc(50% - 0.5em);
+  left: 1rem;
+}
+
+/*プロフィール表示画面*/
+.name2{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: 25rem;
+  width: 600px;
+  background-color: snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 30px auto;
+}
+.name2-text{
+  font-size: 30px;
+  color: darkslategrey;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 3rem;
+
+}
+.kana2{
+  margin-top: 25px;
+  margin-bottom: 30px;
+  margin-left: 25rem;
+  width: 600px;
+  background-color: snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 50px auto;
+}
+.kana2-text{
+  font-size: 30px;
+  font-weight: bold;
+  color: darkslategrey;
+  text-align: center;
+}
+.gender2{
+  width:600px;
+  background-color: snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 100px auto;
+}
+.gender-type2{
+  font-size: 30px;
+  font-weight: bold;
+  color: darkslategrey;
+  text-align: center;
+  font-size: 30px;
+
+}
+.age2{
+  margin-top: 85px;
+  margin-bottom: 30px;
+  margin-left:25rem;
+  width: 600px;
+  background-color: snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 100px auto;
+}
+.age2-text{
+  font-size: 30px;
+  font-weight: bold;
+  color: darkslategrey;
+  text-align: center;
+}
+.mail2{
+  margin-top: 85px;
+  margin-bottom: 30px;
+  margin-left: 25rem;
+  width: 600px;
+  background-color: snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 100px auto;
+}
+.mail2-text{
+    font-size: 30px;
+    font-weight: bold;
+    color: darkslategrey;
+    text-align: center;
+}
+
+}
+.tel2{
+  width: 600px;
+  background-color: snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  margin: 100px auto;
+  margin-bottom: 0px;
+}
+.tel2-text{
+  font-size: 30px;
+  font-weight: bold;
+  color: darkslategrey;
+  text-align: center;
+}
+
+.area2{
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: 25rem;
+  width: 600px;
+  background-color: snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  color: darkslategrey;
+  margin: 100px auto;
+}
+.job2{
+  width: 600px;
+  background-color: snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  color: darkslategrey;
+  margin: 100px auto;
+  
+}
+.title-purpose2{
+  width: 600px;
+  background-color: snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  color: darkslategrey;
+  margin: 100px auto;
+}
+
+.your-like2{
+  font-size: 27px;
+  font-weight: bold;
+  color: darkslategrey;
+  text-align: center;
+  padding: 100px;
+  margin-top: -9rem;
+}
+
+.your-hobby2{
+  font-size: 27px;
+  font-weight: bold;
+  color: darkslategrey;
+  text-align: center;
+  padding: 100px;
+  margin-top: -9rem;
+}
+
+.your-personality2{
+  font-size: 27px;
+  font-weight: bold;
+  color: darkslategrey;
+  text-align: center;
+  padding: 100px;
+  margin-top: -9rem;
+}
+
+.checkbox4{
+  width: 635px;
+  background-color: snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 24rem;
+  border-radius: 10px;
+  color: darkslategrey;
+  margin: 130px auto;
+}
+
+.checkbox5{
+  width: 690px;
+  background-color: snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 23rem;
+  border-radius: 10px;
+  color: darkslategrey;
+  margin: 130px auto;
+  margin-top: 2rem;
+}
+.checkbox6{
+  width: 665px;
+  background-color: snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: 24rem;
+  border-radius: 10px;
+  color: darkslategrey;
+  margin: 130px auto;
+  margin-top: 0rem;
+}
+
+.intro2{
+  width: 600px;
+  background-color: snow;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 10px;
+  color: darkslategrey;
+  margin: 0 auto;
+}
+
+.form-control2{
+  height: 40px;
+  width: 410px;
+  font-size: 40px;
+  margin-top: 20px;
+  margin-left: 497px;
+  margin-bottom: 60px;
+  text-align: center;
+  font-weight: bold;
+  color: darkslategrey;
+  margin: 0 auto;
+}
+.select2{
+  font-size: 30px;
+  color: darkslategrey;
+  margin: 0 auto;
+}
+.textarea2{
+    list-style: none;
+    font-size: 30px;
+    font-weight: bold;
+    color: darkslategrey;
+    text-align: center;
+    margin-bottom: 25%;
+    margin:2rem;
+
+}
+/******************************プロフィール表示画面終了************************************/
+
+
+
+/*************************************footer部分***************************************/
+footer{
+  padding-top: 2%;
+  width: 100%;
+  height: 100px;
+  background-color: #111;
+  margin-top: 10rem;
+}
+
+ul{
+  text-align: center;
+}
+
+
+li{
+  float: left;
+  list-style: none;
+  font-size: 25px;
+  margin-left: 9rem;
+  font-weight: bold;
+  margin:0 6% auto;
+}
+
+a{
+  padding-top: 130px;
+  color:#fff;
+  margin-left: -1rem;
+}
+
+.img2{
+  border-radius: 50%;
+  height: 9rem;
+  margin-bottom: -3%;
+  margin-left: -13%;
+}
+form{
+  text-align: center;
+}
