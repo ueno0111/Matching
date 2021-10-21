@@ -80,41 +80,41 @@ session_start();
 
 //////////////ログインのアドレスと登録してあるアドレスが一致するか？///////////////////////////////
 //////////////エラーメッセージの初期状態を空に//////////////////////////
-$error = "";
-//////////////サブミットボタンが押されたときの処理、ボタンを押した時に値が入っているかどうか/////////////////////////
-if (isset($_POST['login'])) {
-	$mail = $_POST['mail'];
+	$error = "";
+	//////////////サブミットボタンが押されたときの処理、ボタンを押した時に値が入っているかどうか/////////////////////////
+	if (isset($_POST['login'])) {
+		$mail = $_POST['mail'];
 
-/////////////データが渡ってきた場合の処理///////////////////////////////
-  try {
-		$dbh = new PDO($dsn, $user, $password);
-		$dsn = 'mysql:dbname=takeshiueno_database1;host=mysql1.php.xdomain.ne.jp';
-		$user = 'takeshiueno_0111';
-		$password = '5050Rock';
+	/////////////データが渡ってきた場合の処理///////////////////////////////
+	try {
+			$dbh = new PDO($dsn, $user, $password);
+			$dsn = 'mysql:dbname=takeshiueno_database1;host=mysql1.php.xdomain.ne.jp';
+			$user = 'takeshiueno_0111';
+			$password = '5050Rock';
 
-/////////////SQL文、DBからmailのデータを取得////////////////////////////
-		$sql = 'SELECT * FROM user where mail = :mail';
-		$prepare = $dbh->prepare($sql);//SQLを実行するための準備
-		$prepare->bindValue(':mail', $_POST["mail"], PDO::PARAM_STR);
-		$prepare->execute();//SQL分を実行
-		$result = $prepare->fetch();//取ってきたデータを配列に置き換えている。入力されたメールアドレスが正しいかどうか？ 
-		$dbh = null;
+	/////////////SQL文、DBからmailのデータを取得////////////////////////////
+			$sql = 'SELECT * FROM user where mail = :mail';
+			$prepare = $dbh->prepare($sql);//SQLを実行するための準備
+			$prepare->bindValue(':mail', $_POST["mail"], PDO::PARAM_STR);
+			$prepare->execute();//SQL分を実行
+			$result = $prepare->fetch();//取ってきたデータを配列に置き換えている。入力されたメールアドレスが正しいかどうか？ 
+			$dbh = null;
 
-/////////////ログイン認証ができたときの処理///////////////////////////////
-if(isset($result)&&!empty($result)) { //SQL文で取得したデータと、入力したデータが合っているか//
-	$_SESSION['user_id'] = $result['user_id'];
-	$_SESSION['mail'] = $result['mail'];
-//////////////入力した値とDBに登録したデータが一致すれば指定したページへ遷移///////////////////////////////////////////////////
-	header('Location:http://takeshiueno.php.xdomain.jp/matching/mypage.php?action=user_login',true,307);//hader関数は３つ引数を入れられる。入力した値をリダイレクト時にPOSTする（307をつけないとmailの情報がPOSTされない)
-}else{
-}
-///////////////送信できていなかったら元に戻す//////////////////////////////
-	}catch (PDOException $e) {
-	echo "接続失敗: " . $e->getMessage() . "\n";
-	exit();
-}
-$error_succes="ログインできません";
-}}
+	/////////////ログイン認証ができたときの処理///////////////////////////////
+	if(isset($result)&&!empty($result)) { //SQL文で取得したデータと、入力したデータが合っているか//
+		$_SESSION['user_id'] = $result['user_id'];
+		$_SESSION['mail'] = $result['mail'];
+	//////////////入力した値とDBに登録したデータが一致すれば指定したページへ遷移///////////////////////////////////////////////////
+		header('Location:http://takeshiueno.php.xdomain.jp/matching/mypage.php?action=user_login',true,307);//hader関数は３つ引数を入れられる。入力した値をリダイレクト時にPOSTする（307をつけないとmailの情報がPOSTされない)
+	}else{
+	}
+	///////////////送信できていなかったら元に戻す//////////////////////////////
+		}catch (PDOException $e) {
+		echo "接続失敗: " . $e->getMessage() . "\n";
+		exit();
+	}
+	$error_succes="ログインできません";
+	}}
 
 
 
@@ -152,20 +152,20 @@ $error_succes="ログインできません";
 
 
 		  //やり方その2　こっちのほうが簡単　チェックのついた値を取得する
-      if (isset($_POST['your_hobby']) && is_array($_POST['your_hobby'])) {
-      $your_hobby = implode(",", $_POST["your_hobby"]);
-      }
-			$prepare->bindValue(':your_hobby', $your_hobby, PDO::PARAM_STR);
+			if (isset($_POST['your_hobby']) && is_array($_POST['your_hobby'])) {
+			$your_hobby = implode(",", $_POST["your_hobby"]);
+			}
+					$prepare->bindValue(':your_hobby', $your_hobby, PDO::PARAM_STR);
 
-      if (isset($_POST['your_personality']) && is_array($_POST['your_personality'])) {
-      $your_personality = implode("、", $_POST["your_personality"]);
-      }
+			if (isset($_POST['your_personality']) && is_array($_POST['your_personality'])) {
+			$your_personality = implode("、", $_POST["your_personality"]);
+			}
 			$prepare->bindValue(':your_personality', $your_personality, PDO::PARAM_STR);
 			$prepare->execute();
 
 
 			///////////////////////画像を登録する/////////////////////////////////////////////////////////////////////////////
-      ///////////////////////user_idの降順（一番最後の最新のデータ)を取得///////////////////////////////////
+     	    ///////////////////////user_idの降順（一番最後の最新のデータ)を取得///////////////////////////////////
 			$dbh = new PDO($dsn, $user, $password);
 			$sql = 'SELECT * FROM user order by user_id desc limit 1';
 			$prepare = $dbh->prepare($sql);//SQLを実行するための準備
@@ -228,11 +228,12 @@ $error_succes="ログインできません";
 
 				<nav class="globalMenuSp">
 					<ul>
-						<li><a href="matching.php#link4">利用者様からのレビュー</a></li>
 						<li><a href="matching.php#link1">ご登録方法</a></li>
 						<li><a href="matching.php#link2">ご利用の流れ</a></li>
 						<li><a href="matching.php#link3">プライバシーポリシー</a></li>
+						<li><a href="matching.php#link4">利用者様からのレビュー</a></li>
 						<li><a href="matching.php#link5">お問い合わせ</a></li>
+						<li><a href="matching.php#link6">退会はこちら<br>※ログインをおこなって下さい。</a></li>
 					</ul>
 				</nav>
 			</ul>
@@ -940,6 +941,7 @@ $error_succes="ログインできません";
 
 
 <!-------------------------------------------------ログインする 部分------------------------------------------------------------------------------>
+<a name="link6"></a>
 <div class="login-section">
 	<button id="openModal3">ログインする</button>
 </div>

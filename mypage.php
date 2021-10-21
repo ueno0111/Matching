@@ -682,9 +682,8 @@
 						</label>
 
 						<div class="intro3">自己紹介</div>
-	　　　　　　<textarea name ="text" class="textarea3">　<?php echo $result[0]['text']; ?>　</textarea>
-					<input type="submit" value="送信" class="btn btn--orange">
-
+	　　　　　　		  <textarea name ="text" class="textarea3">　<?php echo $result[0]['text']; ?>　</textarea>
+						<input type="submit" value="送信" class="btn btn--orange">
 					</form>
 					</div>
 				</div>
@@ -694,7 +693,8 @@
 		×
 		</div>
 	</section>
-		</div>
+	<a href="delete_id.php"><button id="openModal2">退会する</button></a>
+</div>
 </div>
 </div>
 
