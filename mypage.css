@@ -91,26 +91,9 @@ li{
     border: 1px solid grey;
     margin-bottom: 5%;
     margin-top: 5%;
+    max-width: 60%;
 }
 
-.item{
-  font-size: 45px;
-  text-align: center;
-}
-
-.good{
-  width: 340px;
-  margin-top: -40px;
-  margin-left: 263px;
-}
-
-.good-point{
-  float: right;
-    font-size: 45px;
-    font-weight: bold;
-    margin-top: 85px;
-    margin-right: 265px;
-}
 
 .btn1{
   font-weight: bold;
@@ -657,7 +640,8 @@ margin-left: 20rem;
   margin:50px auto;
 }
 .tel-content{
-  margin-left: -18rem;
+  margin-left: 0rem;
+  text-align: center;
   font-size: 15px;
 }
 .area2{
@@ -776,7 +760,7 @@ margin-left: 20rem;
 .textarea2{
   height: 445px;
   width: 100%;
-  font-size: 45px;
+  font-size: 30px;
   margin-top: 20px;
   margin-bottom: 60px;
   color: darkslategrey;
@@ -1018,15 +1002,15 @@ font-family: monospace;
 
 /********************************************Footer部分**************************************************/
 .FooterSection {
-  padding-top: 24px;
-  padding-bottom: 24px;
+  padding-left: 10px;
   background: #2f2e2e;
+  padding-left: 5rem;
 }
 .Footer-Inner {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: bold;
 }
 .Footer-Inner-Logo {
@@ -1035,12 +1019,10 @@ font-family: monospace;
   width: 64px;
 }
 .Footer-Inner-List {
-  margin-top: 20px;
-  margin-left: 13%;
   width: 100%;
+  margin: auto;
   max-width: 85%;
   display: flex;
-  justify-content: space-between;
 
 }
 @media screen and (max-width: 540px) {
@@ -1076,7 +1058,6 @@ font-family: monospace;
   }
 }
 .Footer-Inner-CopyRight {
-  margin-top: 20px;
   text-align: center;
   color: #fff;
   font-size: 10px;

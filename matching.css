@@ -1384,11 +1384,11 @@ input[type="submit"]{
   margin-top: 61px;
   margin-left: -10px;
   width: 450px;
-  font-size: 22px;
   text-align: center;
   font-weight: bold;
   color: darkslategrey;
   font-size: 20px;
+  background-color: ghostwhite;
 }
 
 /***************************************個人情報をしっかり守ります********************************************/
