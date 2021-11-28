@@ -7,6 +7,7 @@
 		$error_succes="";
 
 		//データベースに接続
+		
 		$dsn = 'mysql:dbname=takeshiueno_database1;host=mysql1.php.xdomain.ne.jp';//データベース接続
 		$user = 'takeshiueno_0111';
 		$password = '5050Rock';
