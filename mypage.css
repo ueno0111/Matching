@@ -1,7 +1,3 @@
-@media (max-width: 1399px)/*max-widthが最大幅、min-widthは最小幅*/
-{
-
-
 html{
   height:100%;
   width:100%;
@@ -10,7 +6,7 @@ html{
 body{
   font-family: 'Bangers', cursive;
   font-family: "メイリオ,meiryo";
-  width:102%;
+  width:100%;
   background-color: lavender;
 
 }
@@ -18,6 +14,24 @@ body{
 li{
   list-style: none;
 }
+
+select{
+  font-size: 30px;
+  margin-left: 525px;
+}
+
+textarea{
+  height: 300px;
+  width: 500px;
+  font-size: 30px;
+  margin-top: 20px;
+  margin-bottom: 60px;
+  margin-left: 320px;
+}
+
+text{
+  margin-left: 20rem;
+  }
 
 
 .check-box2{
@@ -27,7 +41,7 @@ li{
 }
 
 
-/*********************************************一番上のヘッダー部分****************************************/
+/**ヘッダー**/
 .gl-Header{
   justify-content: space-between;
   align-items: center;
@@ -44,9 +58,9 @@ li{
 }
 
 
-/*************************************************ヘッダーロゴ*******************************************/
+/**ヘッダーロゴ**/
 .Header-Logo{
-  margin-top: -223px;
+  margin-top: -215px;
   margin-left: 75px;
   width: 31rem;
   z-index: -11;
@@ -63,7 +77,6 @@ li{
   margin-bottom: 65px;
 }
 
-/*******************************************ヘッダー画像の装飾********************************************/
 .header-subtitle{
   height: 58px;
   background-color: snow;
@@ -87,14 +100,11 @@ li{
 }
 
 .img1{
-    border-radius: 50%;
     border: 1px solid grey;
     margin-bottom: 5%;
     margin-top: 5%;
     max-width: 60%;
 }
-
-
 .btn1{
   font-weight: bold;
   background-color: dimgrey;
@@ -118,11 +128,11 @@ li{
 }
 
 
-/********************************************お相手検索**************************************************/
+/**お相手検索**/
 .modalArea {
   display: none;
   position: fixed;
-  z-index: 10; /*サイトによってここの数値は調整 */
+  z-index: 10;
   top: 0;
   left: 0;
   width: 100%;
@@ -154,7 +164,6 @@ li{
 }
 
 
-/* 以下ボタンスタイル */
 button {
   padding: 10px;
   background-color: #fff;
@@ -192,7 +201,7 @@ button {
   color:#111;
 }
 
-/****************************************モーダルの中の送信ボタン*********************************************/
+/**モーダルの中の送信ボタン**/
 @import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
 
 .btn,
@@ -238,7 +247,7 @@ a.btn--orange:hover {
   left: 1rem;
 }
 
-/******************************************お相手検索****************************************************/
+/**お相手検索**/
 .gender{
   margin-top: 80px;
   margin-bottom: 30px;
@@ -392,26 +401,7 @@ font-size:30px;
   text-align: center;
 }
 
-select{
-  font-size: 30px;
-  margin-left: 525px;
-}
-
-textarea{
-  height: 300px;
-  width: 500px;
-  font-size: 30px;
-  margin-top: 20px;
-  margin-bottom: 60px;
-  margin-left: 320px;
-}
-/**********************************************お相手検索終了*******************************************/
-
-
-
-
-
-/**********************************************編集するモーダル********************************************/
+/**編集するモーダル**/
 .modalArea2 {
   display: none;
   position: fixed;
@@ -455,20 +445,15 @@ button {
 }
 
 #openModal2{
-  transform: translate(-50%,-50%);
-  height: 100px;
-  width: 300px;
-  font-size: 39px;
+  height: 70px;
+  width: 200px;
+  font-size: 25px;
   background-color: lavenderblush;
   color: darkslategrey;
   font-weight: bold;
   border: 1px lightslategrey solid;
   font-family: monospace;
-  border-radius: 25px;
-  margin: 0 auto;
-  display: block;
-  margin-left: 50%;
-  margin-bottom: 10%;
+  border-radius: 10px;
 }
 
 .modalWrapper2 {
@@ -489,7 +474,7 @@ button {
   font-family: monospace;
 }
 
-/**************************************モーダルの中の送信ボタン*********************************************/
+/**モーダルの中の送信ボタン**/
 @import "https://use.fontawesome.com/releases/v5.13.0/css/all.css";
 
 .btn,
@@ -535,9 +520,6 @@ a.btn--orange:hover {
   left: 1rem;
 }
 
-text{
-margin-left: 20rem;
-}
 
 /*******************************************プロフィール表示画面********************************************/
 .name2{
@@ -624,7 +606,7 @@ margin-left: 20rem;
   margin:50px auto;
 }
 .mail2-text{
-  font-size: 15px;
+  font-size: 25px;
   color: darkslategrey;
   margin:70px auto;
 }
@@ -636,13 +618,13 @@ margin-left: 20rem;
   text-align: center;
   font-weight: bold;
   color: darkslategrey;
-  border-radius: 15px;
+  border-radius: 25px;
   margin:50px auto;
 }
 .tel-content{
   margin-left: 0rem;
   text-align: center;
-  font-size: 15px;
+  font-size: 25px;
 }
 .area2{
   width: 600px;
@@ -678,25 +660,24 @@ margin-left: 20rem;
 }
 
 .your-personality2{
-  font-size:23px;
+  font-size:25px;
   color: darkslategrey;
-  margin:80px auto;
+  margin:70px auto;
 }
 
 .your-like2{
-  font-size:22px;
+  font-size:25px;
   color: darkslategrey;
-  margin:100px auto;
+  margin:70px auto;
 }
 
 .your-hobby2{
-  font-size:22px;
+  font-size:25px;
   color: darkslategrey;
-  margin:140px auto;
+  margin:70px auto;
 }
 
 .checkbox4{
-  margin-bottom: 30px;
   width: 635px;
   background-color: snow;
   font-size: 30px;
@@ -704,7 +685,7 @@ margin-left: 20rem;
   font-weight: bold;
   color: darkslategrey;
   border-radius: 15px;
-  margin:100px auto;
+  margin:70px auto;
 }
 
 .checkbox5{
@@ -746,7 +727,7 @@ margin-left: 20rem;
   margin:50px auto;
 }
 .form-control2{
-  font-size: 20px;
+  font-size: 27px;
   color: darkslategrey;
   text-align: center;
 }
@@ -758,22 +739,20 @@ margin-left: 20rem;
 
 
 .textarea2{
-  height: 445px;
+  height: 100%;
   width: 100%;
-  font-size: 30px;
-  margin-top: 20px;
-  margin-bottom: 60px;
+  font-size: 25px;
   color: darkslategrey;
   margin:0 auto;
 }
-/****************************************プロフィール表示画面終了*********************************************/
 
 
 
 
 
 
-/*******************************************編集画面*******************************************************/
+
+/**編集**/
 .prog-img3{
   margin-top: 3rem;
 }
@@ -998,68 +977,42 @@ font-family: monospace;
   margin-top: 20px;
   margin-bottom: 30px;
   margin-left: 0px;
+  text-align: center;
+}
+.edit-wrapper{
+  text-align: center;
+  margin-top: 13rem;
+
+}
+.delete-wrapper{
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+
 }
 
-/********************************************Footer部分**************************************************/
+/**Footer**/
 .FooterSection {
-  padding-left: 10px;
   background: #2f2e2e;
-  padding-left: 5rem;
-}
-.Footer-Inner {
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-  font-size: 18px;
-  font-weight: bold;
-}
-.Footer-Inner-Logo {
-  margin-left: auto;
-  margin-right: auto;
-  width: 64px;
 }
 .Footer-Inner-List {
-  width: 100%;
-  margin: auto;
-  max-width: 85%;
   display: flex;
+  text-align: center;
 
-}
-@media screen and (max-width: 540px) {
-  .Footer-Inner-List {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 }
 .Footer-Inner-List-Item {
   margin-top: 30px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 25px;
   color: white;
-  text-align: center;
+  font-size: 23px;
+  font-family: monospace;
+  width:100%;
+  text-decoration: none;
 }
-@media screen and (max-width: 540px) {
-  .Footer-Inner-List-Item {
-    margin-right: 0;
-    padding-left: 0;
-    width: 100%;
-  }
-}
-.Footer-Inner-List-Item:not(:first-child) {
-  border-left: 1px solid #fff;
-  margin-left: 80px;
-}
-@media screen and (max-width: 540px) {
-  .Footer-Inner-List-Item:not(:first-child) {
-    border-left: none;
-    margin-top: 20px;
-  }
-}
+
 .Footer-Inner-CopyRight {
   text-align: center;
   color: #fff;
-  font-size: 10px;
-}
+  font-size: 12px;
+  padding-bottom: 1rem;
 }

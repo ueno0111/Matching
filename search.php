@@ -86,8 +86,8 @@
 	</head>
 
 	<body>
-			<a id="index"></a>
-		<!--ヘッダーロゴ -->
+		<a id="index"></a>
+		<!--ヘッダー-->
 		<header>
 			<div class="gl-Header">
 				<div class="gl-Header_Inner">
@@ -97,8 +97,7 @@
 			</div>
 		</header>
 
-
-		<!--閲覧履歴一覧-->
+		<!--閲覧履歴-->
 		<main>
 			<div class="history-wrapper">
 				<div class="container">
@@ -135,20 +134,19 @@
 			</div>
 		</main>
 
-		<!--Footer部分-->
+		<!--Footer-->
 		<footer>
 			<div class="footer-wrapper">
-				<div class="footer-logo"></div>
 				<div class="footer-list">
 					<ul>
-						<li><a href ="serach.php">上のへ戻る</a></li>
+						<li><a href ="serach.php">上へ戻る</a></li>
 						<li><a href="matching.php">ホームヘ戻る</a></li>
 						<li><a href ="mypage.php#link6">条件検索</a></li>
 						<li><a href="matching.php#link5">お問い合わせ</a></li>
 					</ul>
 				</div>
+				<div class="Footer-Inner-CopyRight">©2022 婚活マッチング制作</div>
 			</div>
 		</footer>
-
 	</body>
 </html>

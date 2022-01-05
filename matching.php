@@ -1,62 +1,38 @@
 <?php
-		session_start();
-		//入力チェック //
-		//初期化、空の値を代入することで、echoをした時に何も表示されない
-		$error_name="";
-		$error_body="";
-		$error_succes="";
+		//sessionはサーバー側にデータを保存するーユーザーごとのページを表示
+		//cookieはブラウザ側に保存
+		//sessionでデータベースへ保存ー識別IDをデータベースから受けとり、cookieでブラウザに保存ー再度ログインした時にcookieの持っている識別番号をサーバーへー自分のページを表示する
+		session_start();//sessionを開始する
 
 		//データベースに接続
-		
 		$dsn = 'mysql:dbname=takeshiueno_database1;host=mysql1.php.xdomain.ne.jp';//データベース接続
-		$user = 'takeshiueno_0111';
-		$password = '5050Rock';
+		$user = 'takeshiueno_0111';//ユーザー名
+		$password = '5050Rock';//パスワード
 
-		//お問い合わせフォームからデータベースへ//
-		if($_GET["action"] == "send"){
-			$error_flag=true;
-		///nameに値が空の場合//
-		if($_POST["name"] == ""){
-			$error_name= "お名前を入力して下さい";
-			$error_flag=false;
-		}
-		//textの値が空だった場合//
-		if($_POST["text"] == ""){
-			$error_body="内容を入力して下さい";
-			$error_flag=false;
-		}else{
-		echo "<script>alert('お問い合わせ内容を承りました');</script>";//問題なく内容が送信が出来た時にメッセージを表示する
-		}
-		//$error_flagの中身はtrue,false。問い合わせフォームの必須の部分が入力されていれば、データベースと接続する//
-		if($error_flag){
-		//お問い合わせデータ登録始まり//
-			try {
-				$dbh = new PDO($dsn, $user, $password);
-				$sql = 'INSERT INTO matching_contact (name,age,type,text,in_date,up_date) VALUE (:name, :age,:type,:text,now(),now())';//now()はMYSQLの標準日時取得する
-				$prepare = $dbh->prepare($sql);//SQLを実行するための準備
-				$prepare->bindValue(':name', $_POST["name"], PDO::PARAM_STR);//STR文字列
-				$prepare->bindValue(':age', $_POST["age"], PDO::PARAM_INT);//INT数字
-				$prepare->bindValue(':type', $_POST["type"], PDO::PARAM_STR);
-				$prepare->bindValue(':text', $_POST["text"], PDO::PARAM_STR);
-				$prepare->execute();
 
-				} catch (PDOException $e) {
-						echo "接続失敗: " . $e->getMessage() . "\n";
-						exit();
-				$error_succes="お問い合わせ内容を送ることができませんでした";
-				}
+		//お問い合わせ登録
+		try {
+			$dbh = new PDO($dsn, $user, $password);//PDOは「PHP Data Objects」の略で、PHPからデータベースへ簡単にアクセスするためのもの。
+			//PDOを使うメリットは、データベースの種類やバージョンの違いを意識せずにコードを書ける。同じ記述ができる。
+			//データベースの接続部分など部分的にはデータベースごとにコードを変更する必要がありますが、
+			//基本的なSQLの実行、トランザクション、プリペアドステートメントを使うなど基本的な操作については共通のコードを使うことができます。共通化
+			$sql = 'INSERT INTO matching_contact (name,age,type,text,in_date,up_date) VALUE (:name, :age,:type,:text,now(),now())';
+			$prepare = $dbh->prepare($sql);//SQLを実行するための準備
+			$prepare->bindValue(':name', $_POST["name"], PDO::PARAM_STR);//bindValueで入力されたデータを置き換える
+			$prepare->bindValue(':age', $_POST["age"], PDO::PARAM_INT);
+			$prepare->bindValue(':type', $_POST["type"], PDO::PARAM_STR);
+			$prepare->bindValue(':text', $_POST["text"], PDO::PARAM_STR);
+			$prepare->execute();
+
+			} catch (PDOException $e) {
+					echo "接続失敗: " . $e->getMessage() . "\n";
+					exit();
 			}
-		}
 
 
 
-
-
-
-
-		//ログインする際に必要でデータベースに接続する時の文//
-		//ログイン画面で入力した値が正しくGET送信された場合、データベースに接続することができる//
-		if($_GET["action"] == "user_login"){
+		//ログイン
+		if($_GET["action"] == "user_login"){//入力された情報と、登録しているログイン情報が同じなら。ログイン時に入力された情報が正しければ、データベースへ繋ぐs
 			try {
 				$dsn = 'mysql:dbname=takeshiueno_database1;host=mysql1.php.xdomain.ne.jp';
 				$user = 'takeshiueno_0111';
@@ -68,66 +44,60 @@
 				exit();
 			}
 
-			//ログインのアドレスと登録してあるアドレスが一致するか？//
-			//エラーメッセージの初期状態を空にする//
+			//エラーの場合は初期化
 			$error = "";
-			//サブミットボタンが押されたときの処理、ボタンを押した時に値が入っているかどうか//
-			if (isset($_POST['login'])) {
-				$mail = $_POST['mail'];
 
-				//データが渡ってきた場合//
+			//ログインに値が入っていれば
+			if (isset($_POST['login'])) {//変数に値がセットされているか調べるーloginに値がセットされていれば...
+				$mail = $_POST['mail'];//メールアドレスをPOSTで受け取り、変数に入れる
+
 				try {
-						$dbh = new PDO($dsn, $user, $password);
-						$dsn = 'mysql:dbname=takeshiueno_database1;host=mysql1.php.xdomain.ne.jp';
-						$user = 'takeshiueno_0111';
-						$password = '5050Rock';
+						$dbh = new PDO($dsn, $user, $password);//データベースに接続
+						$dsn = 'mysql:dbname=takeshiueno_database1;host=mysql1.php.xdomain.ne.jp';//接続先
+						$user = 'takeshiueno_0111';//ユーザー名
+						$password = '5050Rock';//パスワード
 
-						/////////////SQL文、DBからmailのデータを取得////////////////////////////
+					    //データベースに登録してあるメールアドレスを取り出す
 						$sql = 'SELECT * FROM user where mail = :mail';
 						$prepare = $dbh->prepare($sql);//SQLを実行するための準備
-						$prepare->bindValue(':mail', $_POST["mail"], PDO::PARAM_STR);
+						$prepare->bindValue(':mail', $_POST["mail"], PDO::PARAM_STR);//:mail置き換え
 						$prepare->execute();//SQL分を実行
-						$result = $prepare->fetch();//取ってきたデータを配列に置き換えている。入力されたメールアドレスが正しいかどうか？ 
-						$dbh = null;
+						$result = $prepare->fetch();//配列形式で初めに抽出された一つを取得する。
+						$dbh = null;//データベース切断
 
-						//ログイン認証ができたときの処理//
-						//SQL文で取得したデータと、入力したデータが合っているか//
-						if(isset($result)&&!empty($result)) { 
-							$_SESSION['user_id'] = $result['user_id'];
-							$_SESSION['mail'] = $result['mail'];
-							//入力した値とDBに登録したデータが一致すれば指定したページへ遷移//
+						//ログイン認証
+						if(isset($result)&&!empty($result)) {//入力した値とデータベースに保存されている値が合っているか
+							$_SESSION['user_id'] = $result['user_id'];//$SESSIONへ代入ーサーバーへ保存ー次のページへ渡す
+							$_SESSION['mail'] = $result['mail'];//$SESSIONへ代入ーサーバーへ保存ー次のページへ渡す
+
+							//mypage.phpへデータを送る
 							header('Location:http://takeshiueno.php.xdomain.jp/matching/mypage.php?action=user_login',true,307);//hader関数は３つ引数を入れられる。入力した値をリダイレクト時にPOSTする（307をつけないとmailの情報がPOSTされない)
 						}else{
-							if($result==false){
-								$alert="";
-								$alert="<script type='text/javascript'>alert('メールアドレスが間違っています。');</script>";
-								echo $alert;
+							if($result==false){//入力した値が違っていたら
+								$alert="";//値を空に戻す
+								$alert="<script type='text/javascript'>alert('メールアドレスが間違っています。');</script>";//エラーメッセージを表示する
+								echo $alert;//値が違っていたらエラーメッセージを表示
 							}
 						}
-					}		//送信できていなかったら元に戻す//
+					}
 							catch (PDOException $e) {
 							echo "接続失敗: " . $e->getMessage() . "\n";
 							exit();
 				}
-							$error_succes="ログインできません";
 			}
 		}
 
 
 
 
-
-
-
-
-		//新規会員登録情報をデータベースへ送る//
-		if($_GET["action"] == "user_insert"){
+		//新規登録
+		if($_GET["action"] == "user_insert"){//新規登録の情報が送信されたとき
 			try {
 				$dbh = new PDO($dsn, $user, $password);
 				$sql = 'INSERT INTO user (name,kana,gender,age,mail,tel,area,job,purpose,your_like,your_hobby,your_personality,text,in_date,up_date) VALUE (:name,:kana,:gender,:age,:mail,:tel,:area,:job,:purpose,:your_like,:your_hobby,:your_personality,:text,now(),now())';//now()はMYSQLの標準日時取得する
 				$prepare = $dbh->prepare($sql);//SQLを実行するための準備
-				$prepare->bindValue(':name', $_POST["name"], PDO::PARAM_STR);//STR文字列
-				$prepare->bindValue(':kana', $_POST["kana"], PDO::PARAM_STR);//INT数字
+				$prepare->bindValue(':name', $_POST["name"], PDO::PARAM_STR);//置き換え
+				$prepare->bindValue(':kana', $_POST["kana"], PDO::PARAM_STR);
 				$prepare->bindValue(':gender', $_POST["gender"], PDO::PARAM_STR);
 				$prepare->bindValue(':age', $_POST["age"], PDO::PARAM_INT);
 				$prepare->bindValue(':mail', $_POST["mail"], PDO::PARAM_STR);
@@ -147,54 +117,51 @@
 					//登録する時に値と値の間に,を入れる
 					$spl = ",";
 				}
-					$prepare->bindValue(':your_like', $your_like, PDO::PARAM_STR);//実行する
+					$prepare->bindValue(':your_like', $your_like, PDO::PARAM_STR);
 
 
-				//やり方その2　 簡易版　チェックのついた値を取得する
+				//やり方その2 チェックのついた値を取得する
 				if (isset($_POST['your_hobby']) && is_array($_POST['your_hobby'])) {
 					$your_hobby = implode(",", $_POST["your_hobby"]);
 				}
-					$prepare->bindValue(':your_hobby', $your_hobby, PDO::PARAM_STR);
+					$prepare->bindValue(':your_hobby', $your_hobby, PDO::PARAM_STR);//置き換え
 
 				if (isset($_POST['your_personality']) && is_array($_POST['your_personality'])) {
 					$your_personality = implode("、", $_POST["your_personality"]);
 				}
-					$prepare->bindValue(':your_personality', $your_personality, PDO::PARAM_STR);
-					$prepare->execute();
+					$prepare->bindValue(':your_personality', $your_personality, PDO::PARAM_STR);//置き換え
+					$prepare->execute();//実行する
 
 
 
 
 
 
-
-
-				//画像を登録する//
-				//user_idの降順（一番最後の最新のデータ)を取得//
+				//画像を登録する
 				$dbh = new PDO($dsn, $user, $password);
-				$sql = 'SELECT * FROM user order by user_id desc limit 1';
+				$sql = 'SELECT * FROM user order by user_id desc limit 1';//最後に登録されたuser_idのデータを取ってくる
 				$prepare = $dbh->prepare($sql);//SQLを実行するための準備
-				$prepare->execute();
-				$result = $prepare->fetch(); //fetchは１件、fetchallは複数件の場合
+				$prepare->execute();//実行
+				$result = $prepare->fetch();//データを一つだけ取ってくる。配列形式
 				
 
-				//対象の相手のプロフィール情報を一旦削除//
+				//対象の相手の画像を一旦削除//
 				$dbh = new PDO($dsn, $user, $password);
-				$sql = 'DELETE from upload_image where user_id =:user_id'; 
-				$prepare = $dbh->prepare($sql);//SQLを実行するための準備
-				$prepare->bindValue(':user_id', $result["user_id"], PDO::PARAM_INT);
-				$prepare->execute();
+				$sql = 'DELETE from upload_image where user_id =:user_id';//一度画像を削除する
+				$prepare = $dbh->prepare($sql);//取得したユーザーの画像を変数へ代入
+				$prepare->bindValue(':user_id', $result["user_id"], PDO::PARAM_INT);//画像はINT
+				$prepare->execute();//実行
 
-				//一時ディレクトリから指定したディレクトリにファイルを移動する//
+				//一時ディレクトリから、指定したディレクトリにファイルを移動する
 				move_uploaded_file($_FILES["main"]["tmp_name"],'img/'.$_FILES["main"]["name"]);
 
 				//画像を新たに登録処理をする
 				$dbh = new PDO($dsn, $user, $password);
 				$sql = 'INSERT INTO upload_image(user_id,file_name,file_category,description,insert_time,update_time) values(:user_id,:file_name,:file_category,:description,now(),now())';
-				$prepare = $dbh->prepare($sql);//SQLを実行するための準備
+				$prepare = $dbh->prepare($sql);
 				$prepare->bindValue(':user_id', $result["user_id"], PDO::PARAM_INT);
-				$prepare->bindValue(':file_name', 'img/'.$_FILES["main"]["name"], PDO::PARAM_STR);//STR文字列
-				$prepare->bindValue(':file_category', 1, PDO::PARAM_INT);//INT数字
+				$prepare->bindValue(':file_name', 'img/'.$_FILES["main"]["name"], PDO::PARAM_STR);
+				$prepare->bindValue(':file_category', 1, PDO::PARAM_INT);
 				$prepare->bindValue(':description', $_FILES["main"]['type'], PDO::PARAM_STR);
 				$prepare->execute();
 			}	catch (PDOException $e) {
@@ -202,7 +169,6 @@
 						exit();
 			}
 		}
-
 ?>
 
 
@@ -221,7 +187,7 @@
 	</head>
 
 	<body>
-		<!--ロゴ -->
+		<!--ロゴ-->
 		<header class="gl-Header">
 			<!--ロゴ画像--->
 			<img class="Header-Logo" src="logo.PNG" alt=ロゴ画像>
@@ -241,7 +207,7 @@
 							<li><a href="matching.php#link3">プライバシーポリシー</a></li>
 							<li><a href="matching.php#link4">利用者様からのレビュー</a></li>
 							<li><a href="matching.php#link5">お問い合わせ</a></li>
-							<li><a href="matching.php#link6">退会はこちら<br>※ログインをおこなって下さい。</a></li>
+							<li><a href="matching.php#link6">退会はこちら<br>※ログインをおこなってください</a></li>
 						</ul>
 					</nav>
 				</ul>
@@ -262,7 +228,6 @@
 				</div>
 			</figcaption>	
 		</figure>
-
 
 
 
@@ -520,13 +485,8 @@
 		</section>
 		
 
-
-
-
-
 		<main>
 			<!--空いた時間に気軽に会える！-->
-			<!--タイトル-->
 			<h1 class="main-visual1-left__register-prompt">
 				空いた時間で気軽に会える！<br>
 				出会いの総合マッチングアプリ
@@ -555,6 +515,7 @@
 						<div class="modal-title2">【会員登録フォーム】</div>
 
 						<form method="post" action="matching.php?action=user_insert" enctype="multipart/form-data">
+							<!--POSTは人に見られたくないデータを送るーURLに含まれない。GETはURLにデータの内容が含まれるーブックマークできるーブラウザのキャッシュ機能で高速表示ができる-->
 							<section class="check-box">
 
 								<!--プロフィール画像-->
@@ -786,14 +747,7 @@
 								<div class="introduction">【自己紹介】</div>
 								<textarea name ="text" class="textarea"></textarea>
 								<input type="submit" value="送信" id="send" class="btn btn--orange" autofocus required>
-								<script>
-										function disp(){
-											window.alert('訪問時のメッセージ');
-										}
-										function disp2(){
-											window.alert('退去時のメッセージ');
-										}
-								</script>
+
 								<div id="closeModal2" class="closeModal2">×</div>
 							</section>
 						</form>
@@ -802,10 +756,6 @@
 			</section>
 
 
-
-
-
-				
 			<!--ユーザー様からのレビュー-->
 			<a name="link4"></a>
 			<section class="top-Happy">
@@ -870,15 +820,10 @@
 									<span class="text__name"> 28歳男性・29歳女性 東京</span>
 								</p>
 							</section>
-
-
 						</div>
 					</div>
 				</div>
 			</section>
-
-
-
 
 
 
@@ -912,10 +857,6 @@
 				
 
 
-
-
-
-
 			<!--アプリご利用の流れ-->
 			<section class="main-visual">
 				<h1 class="main-visual4-left__register-prompt">スピードマッチング<br>〜アプリご利用の流れ〜</br></h1>
@@ -942,12 +883,6 @@
 			</section>
 
 
-
-
-
-
-
-
 			<!--ログインモーダル-->
 			<a name="link6"></a>
 			<div class="login-section">
@@ -972,13 +907,6 @@
 			</section>
 
 
-
-
-
-
-
-
-
 			<!--プライバシー-->
 			<section>
 				<h1 class="main-visual6-left__register-prompt">婚活マッチングは安心・安全！<br>個人情報をしっかり守ります</h1>
@@ -1001,13 +929,6 @@
 
 
 
-
-
-
-
-
-
-
 			<!--お問い合わせ-->
 			<section>
 				<div class="main-visual8">
@@ -1024,12 +945,12 @@
 						<form method="post" action="matching.php?action=send">
 
 							<!--お名前-->
-							<div class="form-item">名前</div>
-							<input type="text" name="name">
+							<div class="form-item">名前（必須）</div>
+							<input id="your_name" name="name"　required>
 							
 							<!--年齢入力-->
-							<div class="form-item">年齢</div>
-							<select name="age">
+							<div class="form-item">年齢 (必須)</div>
+							<select id="your_age" name="age" 　required　>
 								<option value="未選択">選択してください</option>
 								<?php
 									for ($i=18; $i<=100;$i++) {
@@ -1056,14 +977,31 @@
 							</select>
 
 							<!--内容-->
-							<div class="form-item">内容</div>
-							<textarea name ="text"></textarea>
-							<input type="submit" value="送信">
-							<?php 
-								echo $error_name;
-								echo $error_body; 
-								echo $error_succes;
-							?>
+							<div class="form-item">内容 (必須)</div>
+							<textarea name ="text" id="your_text"></textarea>
+							<input id="submit_btn" type="submit" value="送信"　 required></input>
+
+							<!--お問い合わせ内容に漏れがあればエラー表示する-->
+							<script>
+								$(function(){
+									$('#submit_btn').on('click',function(){//ボタンをクリックした時
+										let isEmpty = false;//空ではない
+
+										jQuery('#your_name,#your_age,#your_text').each(function(){//値を一つづつ取り出す
+											if(jQuery(this).val() === ''){//入力された項目がからの場合
+												alert('必須項目が入力されていません');
+												$(this).focus()//入力されていない項目にカーソルが現れる
+												isEmpty = true;//値が空ですよー空ならtrue
+												return false;//実行しない
+											}
+										});
+										if(isEmpty)//falseー値が空でなければ
+										return false;//必須項目を満たしているので実行ー空ではない
+										else alert('お問い合わせ内容を受け付けました');
+									});
+								});
+
+							</script>
 						</form>
 					</div>
 				</div>
@@ -1074,21 +1012,17 @@
 
 
 
-		<!--フッター部分-->
+		<!--フッター-->
 		<footer>
 			<section class="FooterSection">
-				<div class="Footer">
-					<div class="Footer-Inner">
-						<div class="Footer-Inner-List">
-							<a href="matching.php" class="Footer-Inner-List-Item">上へ戻る</a>
-							<a href="matching.php#link1" class="Footer-Inner-List-Item">アプリのご登録方法</a>
-							<a href="matching.php#link2" class="Footer-Inner-List-Item">ご利用方法</a>
-							<a href="matching.php#kink3" class="Footer-Inner-List-Item">プライバシーについて</a>
-						</div>
-						<div class="Footer-Inner-CopyRight">
-							©2020 婚活マッチング制作
-						</div>
-					</div>
+				<div class="Footer-Inner-List">
+					<a href="matching.php" class="Footer-Inner-List-Item">トップへ戻る</a>
+					<a href="matching.php#link1" class="Footer-Inner-List-Item">アプリのご登録方法</a>
+					<a href="matching.php#link2" class="Footer-Inner-List-Item">ご利用方法</a>
+					<a href="matching.php#kink3" class="Footer-Inner-List-Item">プライバシーについて</a>
+				</div>
+				<div class="Footer-Inner-CopyRight">
+					©2020 婚活マッチング制作
 				</div>
 			</section>
 		</footer>

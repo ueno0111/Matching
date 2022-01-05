@@ -1,26 +1,26 @@
 <?php
-	session_start();//一時停に情報を保持したものをスタートさせる
+	session_start();
 	$dsn = 'mysql:dbname=takeshiueno_database1;host=mysql1.php.xdomain.ne.jp';//データベース接続
 	$user = 'takeshiueno_0111';
 	$password = '5050Rock';
 
 	//対象の相手のidを削除する
 	try{
-	$dbh = new PDO($dsn, $user, $password);
-	$sql = 'DELETE from user where user_id =:user_id'; 
-	$prepare = $dbh->prepare($sql);
-	$prepare->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_INT);
-	$prepare->execute();
+		$dbh = new PDO($dsn, $user, $password);//PDOでデータベースへ接続
+		$sql = 'DELETE from user where user_id =:user_id';//ユーザーidを削除
+		$prepare = $dbh->prepare($sql);
+		$prepare->bindValue(':user_id', $_SESSION["user_id"], PDO::PARAM_INT);
+		$prepare->execute();
 	}
 	catch (PDOException $e) {
 	echo "接続失敗: " . $e->getMessage() . "\n";
 	exit();
 	}
 
-	session_destroy();
+	session_destroy();//セッションを終らせる
 ?>
 
-<!---------------------------HTML開始------------------------------------------------>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -33,7 +33,7 @@
 		<title>マッチングアプリ</title>
 	</head>
 
-	<!-------------------------------ヘッダーロゴ ----------------------------------------->
+	<!--ヘッダー-->
 	<header>
 		<div class="gl-Header">
 			<div class="gl-Header_Inner">
@@ -45,7 +45,7 @@
 
     <body>
 	
-		<!-------------------------------------お相手えお検索するを終了--------------------------------------------->
+		<!--退会完了画面-->
 
 		<main>
 			<div class="delete-wrap">
@@ -58,22 +58,20 @@
 
 		</main>
 
-		<!------------------------------------------------フッター部分------------------------------------------------------------------------------->
+		<!----フッター-->
 		<footer>
 			<section class="FooterSection">
-				<div class="Footer">
 					<div class="Footer-Inner">
 						<div class="Footer-Inner-List">
-							<a href="mypage.php" class="Footer-Inner-List-Item">ホームへ戻る</a>
+							<a href="matching.php" class="Footer-Inner-List-Item">ホームへ戻る</a>
 							<a href="matching.php#link1" class="Footer-Inner-List-Item">アプリのご登録方法</a>
 							<a href="matching.php#link2" class="Footer-Inner-List-Item">ご利用方法</a>
 							<a href="matching.php#link5" class="Footer-Inner-List-Item">お問い合わせ</a>
 						</div>
 						<div class="Footer-Inner-CopyRight">
-							©2020 婚活マッチング制作
+							©2022 婚活マッチング制作
 						</div>
 					</div>
-				</div>
 			</section>
 		</footer>
     </body>

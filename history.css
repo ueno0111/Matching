@@ -1,6 +1,3 @@
-@media (max-width: 1600px)/*max-widthが最大幅、min-widthは最小幅*/
-{
-
 html{
   height:100%;
   width:100%;
@@ -13,7 +10,34 @@ body{
   background-color: lavender;
 }
 
-/*一番上のヘッダー部分*/
+ul{
+  text-align: center;
+}
+
+li{
+  float: left;
+  list-style: none;
+  font-size: 25px;
+  margin-left: 230px;
+}
+
+a{
+  padding-top: 130px;
+  color:#fff;
+  text-decoration: none;
+}
+
+img{
+  margin-top: 0rem;
+}
+
+h3{
+  color:darkslategrey;
+  font-size: 30px;
+}
+
+
+/*ヘッダー*/
 .gl-Header{
   justify-content: space-between;
   align-items: center;
@@ -37,136 +61,60 @@ body{
 
 .history-wrapper{
   text-align: center;
-  height:188rem;
 }
 
 .heading{
   color:dimgray;
   margin-top: 126px;
   background-color: snow;
+  font-size: 20px;
 }
 
 .prof{
-  float: left;
-  padding-left: 22px;
   margin-top: 50px;
 }
-
-.user{
-  position: relative;
-}
-
 .message-wrapper{
   border-bottom:1px solid #eee;
   padding-bottom: 80px;
   text-align: center;
 }
 
-
-ul{
-  text-align: center;
-}
-
-
-li{
-  float: left;
-  list-style: none;
-  font-size: 25px;
-  margin-left: 230px;
-}
-
-a{
-  padding-top: 130px;
-  color:#fff;
-}
-
-img{
-  border-radius: 50%;
-  width: 25rem;
-  margin-left: 12rem;
-  margin-top: 0rem;
-}
-
-h3{
-  color:darkslategrey;
-  margin-left: 12rem;
-}
-
 .partner-text{
   color:darkslategrey;
-  margin-right: -10rem;
+  max-width: 70%;
+  font-size: 20px;
+  margin: auto;
   margin-bottom: 7rem;
 }
 
 .prof-img{
   height: 25rem;
-  border: 10px solid grey;
+  width:38%;
+  border: 1px solid grey;
 }
 
-/*Footer部分のお問い合わせ*/
+
+/*Footer*/
 footer{
   background: #2f2e2e;
   height: 7rem;
   width: 100%;
-  display: flex;
-}
-.footer-wrapper{
-  position: absolute;
-  width: 70%;
-  padding: 0 auto;
-  margin: 0 auto;
-  margin-top: 1rem;
-}
-.Footer-Inner-Logo {
-  margin-left: auto;
-  margin-right: auto;
-  width: 64px;
 }
 .Footer-Inner-List {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin:2% 22% auto;
+text-align: center;
+padding-top: 1rem;
 }
-@media screen and (max-width: 540px) {
-  .Footer-Inner-List {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
+
 .Footer-Inner-List-Item {
-  text-align: center;
   color: #fff;
-  font-size: 20px;
-  margin-top: 0rem;
-  padding-top: 0rem;
+  font-size: 23px;
   font-weight: bold;
+  margin: 3rem;;
 }
 
-
-@media screen and (max-width: 540px) {
-  .Footer-Inner-List-Item {
-    margin-right: 0;
-    padding-left: 0;
-    width: 100%;
-  }
-}
-.Footer-Inner-List-Item:not(:first-child) {
-  border-left: 1px solid #fff;
-}
-@media screen and (max-width: 540px) {
-  .Footer-Inner-List-Item:not(:first-child) {
-    border-left: none;
-    margin-top: 20px;
-  }
-}
 .Footer-Inner-CopyRight {
   margin-top: 20px;
   color: #fff;
   font-size: 16px;
-  max-width: 100%;
-  margin-left: 60%;
+  text-align: center;
 }
-
-}
-

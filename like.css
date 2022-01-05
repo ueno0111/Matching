@@ -1,23 +1,37 @@
-@media (max-width: 1399px)/*max-widthが最大幅、min-widthは最小幅*/
-{
-
 html{
   height:100%;
   width:100%;
 }
-
 body{
   font-family: 'Bangers', cursive;
   font-family: "メイリオ,meiryo";
   width:100%;
   background-color: lavender;
 }
-
-h3{
-  margin-left: 11rem;
+ul{
+  text-align: center;
+}
+li{
+  float: left;
+  list-style: none;
+  font-size: 25px;
+  margin-left: 230px;
+}
+a{
+  padding-top: 1rem;
+  margin: 1rem;
+  color:#111;
+  text-decoration: none;
+  margin-left: 5rem;
 }
 p{
-  margin-left: 12rem;
+  font-size: 25px;
+}
+h2{
+  font-size: 40px;
+}
+h3{
+  font-size: 35px;
 }
 
 /*一番上のヘッダー部分*/
@@ -49,18 +63,15 @@ p{
 
 .heading{
   color: #111;
-  margin-top: 125px;
+  margin-top: 93px;
   background-color: snow;
 }
 
 .container{
-height: 190rem;
 background-color: lavender;
 }
 
 .prof{
-  float: left;
-  padding-left: 22px;
   margin-top: 50px;
   color: darkslategrey;
 }
@@ -70,40 +81,19 @@ background-color: lavender;
 }
 
 .message-wrapper{
-  border-bottom:1px solid #eee;
   padding-bottom: 80px;
   text-align: center;
 }
 
 
-ul{
-  text-align: center;
-}
-
-
-li{
-  float: left;
-  list-style: none;
-  font-size: 25px;
-  margin-left: 230px;
-}
-
-a{
-  padding-top: 130px;
-  color:#fff;
-}
 
 .prof-img{
-  height: 26rem;
-  border-radius: 50%;
-  width: 27rem;
-  margin-left: 11rem;
+  width: 50%;
   border: 1px solid lightslategray;
 }
 
-/*Footer部分のお問い合わせ*/
+/*Footer*/
 footer{
-  background: #2f2e2e;
   height: 7rem;
   display: inline-flex;
   width: 100%;
@@ -113,8 +103,6 @@ footer{
 padding-top: 15px;
 }
 .Footer-Inner {
-  margin-left: auto;
-  margin-right: auto;
   background-color: #111;
   position: fixed;
   bottom: 0;
@@ -126,51 +114,24 @@ padding-top: 15px;
   width: 64px;
 }
 .Footer-Inner-List {
-  margin-top: 20px;
-  margin-left: 405px;
   width: 100%;
-  max-width: 496px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  font-size: 25px;
+  font-family: monospace;
+  margin-left: -2rem;
+}
+a.Footer-Inner-List-Item{
+  padding-top: 1rem;
+  margin: 1rem;
+  color:#fff;
+  margin-left: 5rem;
 }
 
-@media screen and (max-width: 540px) {
-  .Footer-Inner-List {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-}
-.Footer-Inner-List-Item {
-  text-align: center;
-  color: #fff;
-  font-size: 20px;
-  margin-top: 0rem;
-  padding-top: 0rem;
-  font-weight: bold;
-  margin-left: -60%;
-}
-
-
-@media screen and (max-width: 540px) {
-  .Footer-Inner-List-Item {
-    margin-right: 0;
-    padding-left: 0;
-    width: 100%;
-  }
-}
-.Footer-Inner-List-Item:not(:first-child) {
-  border-left: 1px solid #fff;
-}
-@media screen and (max-width: 540px) {
-  .Footer-Inner-List-Item:not(:first-child) {
-    border-left: none;
-    margin-top: 20px;
-  }
-}
 .Footer-Inner-CopyRight {
   margin-top: 20px;
+  margin-bottom: 10px;
   text-align: center;
   color: #fff;
-  font-size: 16px;
-}
+  font-size: 15px;
 }

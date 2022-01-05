@@ -46,8 +46,6 @@
 		<link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
 		<meta name=”viewport” content=”width=device-width, initial-scale=1”>
 		<script src="matching.js"></script>
-		<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-	<!--<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>-->
 		<title>マッチングアプリ</title>
 	</head>
 
@@ -126,14 +124,12 @@
 		</form>
 
 		<!--いいね！を送る-->
-		<form action="like.php?user_id=<?php echo $_GET["user_id"]; ?>&action=nice" method="post">
-			<img src="good-heart.png" alt="いいね！ハート" class="img2">
-			<button type="submit"　class="button2" onclick="oopsSwalImageSample()">いいね！を送る</button>
-		</form>
+			<form action="like.php?user_id=<?php echo $_GET["user_id"]; ?>&action=nice" method="post">
+					<button type="submit"　class="button2" onclick="oopsSwalImageSample()">いいね！を送る</button>
+			</form>
 
 		<!--フッター部分-->
 		<footer>
-			<div class="footer-logo"></div>
 			<div class="footer-list">
 				<ul>
 					<li><a href="matching.php">トップページ</a></li>
@@ -142,6 +138,9 @@
 					<li><a href="mypage#link5">お問い合わせ</a></li>
 				</ul>
 			</div>
+			<div class="Footer-Inner-CopyRight">
+					©2022 婚活マッチング制作
+				</div>
 		</footer>
 	
 	</body>

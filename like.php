@@ -126,7 +126,7 @@
 							<a href="matching.php#link5" class="Footer-Inner-List-Item">お問い合わせ</a>
 						</div>
 						<div class="Footer-Inner-CopyRight">
-									©2020 婚活マッチング制作
+									©2022 婚活マッチング制作
 						</div>
 					</div>
 			</section>
