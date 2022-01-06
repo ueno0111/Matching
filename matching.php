@@ -178,11 +178,12 @@
 <html>
 	<head>
 		<meta charset="utf-8">
-		<link rel="stylesheet" href="matching.css">
-		<script src="jquery-3.5.1.min.js"></script>
-		<link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name=”viewport” content=”width=device-width, initial-scale=1”>
-		<script src="matching.js"></script>
+		<link rel="canonical" href="" />
+		<meta name="robots" content="noindex,nofollow" />
+		<link rel="stylesheet" href="matching.css">
+		<link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
 		<title>マッチングアプリ</title>
 	</head>
 
@@ -1028,5 +1029,7 @@
 		</footer>
 
 
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="matching.js"></script>
 	</body>
 </html>
