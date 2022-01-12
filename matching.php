@@ -1,24 +1,18 @@
 <?php
-		//sessionはサーバー側にデータを保存するーユーザーごとのページを表示
-		//cookieはブラウザ側に保存
-		//sessionでデータベースへ保存ー識別IDをデータベースから受けとり、cookieでブラウザに保存ー再度ログインした時にcookieの持っている識別番号をサーバーへー自分のページを表示する
-		session_start();//sessionを開始する
+		session_start();
 
 		//データベースに接続
-		$dsn = 'mysql:dbname=takeshiueno_database1;host=mysql1.php.xdomain.ne.jp';//データベース接続
-		$user = 'takeshiueno_0111';//ユーザー名
-		$password = '5050Rock';//パスワード
+		$dsn = 'mysql:dbname=takeshiueno_database1;host=mysql1.php.xdomain.ne.jp';
+		$user = 'takeshiueno_0111';
+		$password = '5050Rock';
 
 
 		//お問い合わせ登録
 		try {
-			$dbh = new PDO($dsn, $user, $password);//PDOは「PHP Data Objects」の略で、PHPからデータベースへ簡単にアクセスするためのもの。
-			//PDOを使うメリットは、データベースの種類やバージョンの違いを意識せずにコードを書ける。同じ記述ができる。
-			//データベースの接続部分など部分的にはデータベースごとにコードを変更する必要がありますが、
-			//基本的なSQLの実行、トランザクション、プリペアドステートメントを使うなど基本的な操作については共通のコードを使うことができます。共通化
+			$dbh = new PDO($dsn, $user, $password);
 			$sql = 'INSERT INTO matching_contact (name,age,type,text,in_date,up_date) VALUE (:name, :age,:type,:text,now(),now())';
-			$prepare = $dbh->prepare($sql);//SQLを実行するための準備
-			$prepare->bindValue(':name', $_POST["name"], PDO::PARAM_STR);//bindValueで入力されたデータを置き換える
+			$prepare = $dbh->prepare($sql);
+			$prepare->bindValue(':name', $_POST["name"], PDO::PARAM_STR);
 			$prepare->bindValue(':age', $_POST["age"], PDO::PARAM_INT);
 			$prepare->bindValue(':type', $_POST["type"], PDO::PARAM_STR);
 			$prepare->bindValue(':text', $_POST["text"], PDO::PARAM_STR);
@@ -32,7 +26,7 @@
 
 
 		//ログイン
-		if($_GET["action"] == "user_login"){//入力された情報と、登録しているログイン情報が同じなら。ログイン時に入力された情報が正しければ、データベースへ繋ぐs
+		if($_GET["action"] == "user_login"){
 			try {
 				$dsn = 'mysql:dbname=takeshiueno_database1;host=mysql1.php.xdomain.ne.jp';
 				$user = 'takeshiueno_0111';
@@ -43,40 +37,33 @@
 				echo "接続失敗: " . $e->getMessage() . "\n";
 				exit();
 			}
-
-			//エラーの場合は初期化
 			$error = "";
 
-			//ログインに値が入っていれば
-			if (isset($_POST['login'])) {//変数に値がセットされているか調べるーloginに値がセットされていれば...
-				$mail = $_POST['mail'];//メールアドレスをPOSTで受け取り、変数に入れる
-
+			if(isset($_POST['login'])) {
+				$mail = $_POST['mail'];
 				try {
-						$dbh = new PDO($dsn, $user, $password);//データベースに接続
-						$dsn = 'mysql:dbname=takeshiueno_database1;host=mysql1.php.xdomain.ne.jp';//接続先
-						$user = 'takeshiueno_0111';//ユーザー名
-						$password = '5050Rock';//パスワード
+						$dbh = new PDO($dsn, $user, $password);
+						$dsn = 'mysql:dbname=takeshiueno_database1;host=mysql1.php.xdomain.ne.jp';
+						$user = 'takeshiueno_0111';
+						$password = '5050Rock';
 
-					    //データベースに登録してあるメールアドレスを取り出す
 						$sql = 'SELECT * FROM user where mail = :mail';
-						$prepare = $dbh->prepare($sql);//SQLを実行するための準備
-						$prepare->bindValue(':mail', $_POST["mail"], PDO::PARAM_STR);//:mail置き換え
-						$prepare->execute();//SQL分を実行
-						$result = $prepare->fetch();//配列形式で初めに抽出された一つを取得する。
-						$dbh = null;//データベース切断
+						$prepare = $dbh->prepare($sql);
+						$prepare->bindValue(':mail', $_POST["mail"], PDO::PARAM_STR);
+						$prepare->execute();
+						$result = $prepare->fetch();
+						$dbh = null;
 
 						//ログイン認証
-						if(isset($result)&&!empty($result)) {//入力した値とデータベースに保存されている値が合っているか
-							$_SESSION['user_id'] = $result['user_id'];//$SESSIONへ代入ーサーバーへ保存ー次のページへ渡す
-							$_SESSION['mail'] = $result['mail'];//$SESSIONへ代入ーサーバーへ保存ー次のページへ渡す
-
-							//mypage.phpへデータを送る
+						if(isset($result)&&!empty($result)) {
+							$_SESSION['user_id'] = $result['user_id'];
+							$_SESSION['mail'] = $result['mail'];
 							header('Location:http://takeshiueno.php.xdomain.jp/matching/mypage.php?action=user_login',true,307);//hader関数は３つ引数を入れられる。入力した値をリダイレクト時にPOSTする（307をつけないとmailの情報がPOSTされない)
 						}else{
-							if($result==false){//入力した値が違っていたら
-								$alert="";//値を空に戻す
-								$alert="<script type='text/javascript'>alert('メールアドレスが間違っています。');</script>";//エラーメッセージを表示する
-								echo $alert;//値が違っていたらエラーメッセージを表示
+							if($result==false){
+								$alert="";
+								$alert="<script type='text/javascript'>alert('メールアドレスが間違っています。');</script>";
+								echo $alert;
 							}
 						}
 					}
@@ -91,12 +78,12 @@
 
 
 		//新規登録
-		if($_GET["action"] == "user_insert"){//新規登録の情報が送信されたとき
+		if($_GET["action"] == "user_insert"){
 			try {
 				$dbh = new PDO($dsn, $user, $password);
 				$sql = 'INSERT INTO user (name,kana,gender,age,mail,tel,area,job,purpose,your_like,your_hobby,your_personality,text,in_date,up_date) VALUE (:name,:kana,:gender,:age,:mail,:tel,:area,:job,:purpose,:your_like,:your_hobby,:your_personality,:text,now(),now())';//now()はMYSQLの標準日時取得する
-				$prepare = $dbh->prepare($sql);//SQLを実行するための準備
-				$prepare->bindValue(':name', $_POST["name"], PDO::PARAM_STR);//置き換え
+				$prepare = $dbh->prepare($sql);
+				$prepare->bindValue(':name', $_POST["name"], PDO::PARAM_STR);
 				$prepare->bindValue(':kana', $_POST["kana"], PDO::PARAM_STR);
 				$prepare->bindValue(':gender', $_POST["gender"], PDO::PARAM_STR);
 				$prepare->bindValue(':age', $_POST["age"], PDO::PARAM_INT);
@@ -107,52 +94,43 @@
 				$prepare->bindValue(':purpose', $_POST["purpose"], PDO::PARAM_STR);
 				$prepare->bindValue(':text', $_POST["text"], PDO::PARAM_STR);
 
-				//初期化する
 				$your_like = ""; 
 				$spl = "";
-				//チェックボックス入った情報をループする、チェックがついてあるものを取ってくる
+				//チェックがついてあるものを取ってくる
 				foreach($_POST["your_like"] as $your_likes){
-					//チェックした項目の値が$your_likeに入る、一発目の$your_likeは空、$splも空、$your_likesにチェックされた一つめの値が入ってくる、
 					$your_like = $your_like.$spl.$your_likes;
-					//登録する時に値と値の間に,を入れる
 					$spl = ",";
 				}
 					$prepare->bindValue(':your_like', $your_like, PDO::PARAM_STR);
 
-
-				//やり方その2 チェックのついた値を取得する
+				//別のやり方
 				if (isset($_POST['your_hobby']) && is_array($_POST['your_hobby'])) {
 					$your_hobby = implode(",", $_POST["your_hobby"]);
 				}
-					$prepare->bindValue(':your_hobby', $your_hobby, PDO::PARAM_STR);//置き換え
+					$prepare->bindValue(':your_hobby', $your_hobby, PDO::PARAM_STR);
 
 				if (isset($_POST['your_personality']) && is_array($_POST['your_personality'])) {
 					$your_personality = implode("、", $_POST["your_personality"]);
 				}
-					$prepare->bindValue(':your_personality', $your_personality, PDO::PARAM_STR);//置き換え
-					$prepare->execute();//実行する
-
-
-
-
+					$prepare->bindValue(':your_personality', $your_personality, PDO::PARAM_STR);
+					$prepare->execute();
 
 
 				//画像を登録する
 				$dbh = new PDO($dsn, $user, $password);
-				$sql = 'SELECT * FROM user order by user_id desc limit 1';//最後に登録されたuser_idのデータを取ってくる
-				$prepare = $dbh->prepare($sql);//SQLを実行するための準備
-				$prepare->execute();//実行
-				$result = $prepare->fetch();//データを一つだけ取ってくる。配列形式
+				$sql = 'SELECT * FROM user order by user_id desc limit 1';
+				$prepare = $dbh->prepare($sql);
+				$prepare->execute();
+				$result = $prepare->fetch();
 				
-
 				//対象の相手の画像を一旦削除//
 				$dbh = new PDO($dsn, $user, $password);
-				$sql = 'DELETE from upload_image where user_id =:user_id';//一度画像を削除する
-				$prepare = $dbh->prepare($sql);//取得したユーザーの画像を変数へ代入
-				$prepare->bindValue(':user_id', $result["user_id"], PDO::PARAM_INT);//画像はINT
-				$prepare->execute();//実行
+				$sql = 'DELETE from upload_image where user_id =:user_id';
+				$prepare = $dbh->prepare($sql);
+				$prepare->bindValue(':user_id', $result["user_id"], PDO::PARAM_INT);
+				$prepare->execute();
 
-				//一時ディレクトリから、指定したディレクトリにファイルを移動する
+				//formで送信されたFILEはテンポラリフォルダというディレクトリに保存される。これを指定したディレクトリに移す
 				move_uploaded_file($_FILES["main"]["tmp_name"],'img/'.$_FILES["main"]["name"]);
 
 				//画像を新たに登録処理をする
@@ -172,25 +150,20 @@
 ?>
 
 
-
-
 <!DOCTYPE html>
-<html>
+<html　lang="ja">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name=”viewport” content=”width=device-width, initial-scale=1”>
-		<link rel="canonical" href="" />
-		<meta name="robots" content="noindex,nofollow" />
 		<link rel="stylesheet" href="matching.css">
 		<link href="https://fonts.googleapis.com/css?family=Bangers" rel="stylesheet">
 		<title>マッチングアプリ</title>
 	</head>
 
 	<body>
-		<!--ロゴ-->
+		<!--ヘッダー-->
 		<header class="gl-Header">
-			<!--ロゴ画像--->
 			<img class="Header-Logo" src="logo.PNG" alt=ロゴ画像>
 			<div class="gl-Header_Inner">
 				<ul class="gl-header-container">
@@ -200,7 +173,6 @@
 						<span></span>
 					</div>
 
-					<!--ハンバーガーメニューの中身-->
 					<nav class="globalMenuSp">
 						<ul>
 							<li><a href="matching.php#link1">ご登録方法</a></li>
@@ -962,10 +934,7 @@
 
 							<!--お問い合わせの種類-->
 							<div class="form-item">お問い合わせの種類</div>
-							<?php
-								$type = array('ご料金について','アプリの使用方法について','マッチングしたお相手について','プライバシーについて','登録や退会について','その他');
-							?>
-							
+							<?php $type = array('ご料金について','アプリの使用方法について','マッチングしたお相手について','プライバシーについて','登録や退会について','その他');?>
 							<!--選択-->
 							<select name="type">
 								<option value="未選択">選択してください</option>
@@ -980,7 +949,7 @@
 							<!--内容-->
 							<div class="form-item">内容 (必須)</div>
 							<textarea name ="text" id="your_text"></textarea>
-							<input id="submit_btn" type="submit" value="送信"　 required></input>
+							<input id="submit_btn" type="submit" value="送信"　 required>
 
 							<!--お問い合わせ内容に漏れがあればエラー表示する-->
 							<script>
